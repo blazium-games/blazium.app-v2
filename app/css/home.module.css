@@ -1,0 +1,25 @@
+.main {
+  >section:nth-of-type(1) {
+    text-align: center;
+    margin-block: var(--spacing-5xl);
+
+    >div {
+      h1 {
+        font: var(--h4);
+        font-weight: var(--font-w-regular);
+      }
+
+      p {
+        margin-top: var(--spacing-2xl);
+        font: var(--h2);
+      }
+
+      >div {
+        margin-top: var(--spacing-4xl);
+        display: flex;
+        gap: var(--spacing-m);
+        justify-content: center;
+      }
+    }
+  }
+}

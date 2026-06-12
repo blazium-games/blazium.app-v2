@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+html {
+  --color-bg-dark: oklch(0.25 0.05 290);
+  --color-bg: oklch(0.28 0.05 290);
+  --color-bg-light: oklch(0.32 0.05 290);
+
+  --color-text: oklch(0.95 0.05 290);
+  --color-text-muted: oklch(from var(--color-text) l c h / 0.8);
+
+  --color-primary: oklch(0.50 0.20 300);
+  --color-secondary: oklch(0.76 0.18 105);
+
+  --color-danger: oklch(0.7 0.18 30);
+  --color-warning: oklch(0.7 0.18 100);
+  --color-success: oklch(0.7 0.18 160);
+  --color-info: oklch(0.7 0.18 260);
+
+  --font-f-heading: "Roboto", sans-serif;
+  --font-f-text: "Inter", sans-serif;
+
+  --font-s-h1: 4.210rem;
+  --font-s-h2: 3.158rem;
+  --font-s-h3: 2.369rem;
+  --font-s-h4: 1.777rem;
+  --font-s-h5: 1.333rem;
+  --font-s-h6: 1.125rem;
+  --font-s-p: 1.000rem;
+  --font-s-small: 0.875rem;
+
+  --font-w-thin: 100;
+  --font-w-extralight: 200;
+  --font-w-light: 300;
+  --font-w-normal: 400;
+  --font-w-medium: 500;
+  --font-w-semibold: 600;
+  --font-w-bold: 700;
+  --font-w-extrabold: 800;
+  --font-w-black: 900;
+
+  --line-h-tight: 1.00em;
+  --line-h-base: 1.25em;
+  --line-h-loose: 1.50em;
+
+  --spacing-2xs: 0.25rem;
+  --spacing-xs: 0.50rem;
+  --spacing-s: 0.75rem;
+  --spacing-m: 1.00rem;
+  --spacing-l: 1.25rem;
+  --spacing-xl: 1.50rem;
+  --spacing-2xl: 1.75rem;
+  --spacing-3xl: 2.50rem;
+  --spacing-4xl: 3.75rem;
+  --spacing-5xl: 6.25rem;
+  --spacing-6xl: 10.00rem;
+  --spacing-7xl: 15.00rem;
+
+  --h1: var(--font-w-semibold) var(--font-s-h1)/var(--line-h-tight) var(--font-f-heading);
+  --h2: var(--font-w-semibold) var(--font-s-h2)/var(--line-h-tight) var(--font-f-heading);
+  --h3: var(--font-w-semibold) var(--font-s-h3)/var(--line-h-base) var(--font-f-heading);
+  --h4: var(--font-w-semibold) var(--font-s-h4)/var(--line-h-base) var(--font-f-heading);
+  --h5: var(--font-w-semibold) var(--font-s-h5)/var(--line-h-base) var(--font-f-heading);
+  --h6: var(--font-w-semibold) var(--font-s-h6)/var(--line-h-base) var(--font-f-heading);
+  --p: var(--font-w-normal) var(--font-s-p)/var(--line-h-loose) var(--font-f-text);
+  --small: var(--font-w-normal) var(--font-s-small)/var(--line-h-loose) var(--font-f-text);
+
+  background-color: var(--color-bg-dark);
+  color-scheme: dark;
+  scrollbar-gutter: stable;
+  scrollbar-width: auto;
+  font-family: var(--font-f-text);
+  color: var(--color-text);
+
+  &,
+  * {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font: var(--h1);
+  }
+
+  h2 {
+    font: var(--h2);
+  }
+
+  h3 {
+    font: var(--h3);
+  }
+
+  h4 {
+    font: var(--h4);
+  }
+
+  h5 {
+    font: var(--h5);
+  }
+
+  h6 {
+    font: var(--h6);
+  }
+
+  p {
+    font: var(--p);
+  }
+
+  small {
+    font: var(--small);
+  }
+
+  code {
+    font: var(--p);
+    font-family: monospace;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.1s;
+  }
+
+  ul,
+  ol {
+    list-style: inside;
+    line-height: var(--line-h-loose);
+  }
+
+  details summary {
+    cursor: pointer;
+  }
+
+  hr {
+    height: 1px;
+    background-color: var(--color-text-muted);
+    margin-block: var(--spacing-xs) var(--spacing-m);
+    opacity: 0.2;
+  }
+
+  &:has(dialog:popover-open),
+  &:has(dialog[open]) {
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  &:has(dialog:popover-open) {
+    pointer-events: none;
+  }
+
+  dialog:popover-open {
+    pointer-events: auto;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
+body {
+  min-height: 100dvh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--spacing-xl);
+
+  a {
+    color: oklch(from var(--color-primary) calc(l + 0.2) c h);
+  }
+}
+
+button,
+.button {
+  cursor: pointer;
+  user-select: none;
+
+  display: inline-flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+  width: fit-content;
+
+  padding: var(--spacing-s) var(--spacing-xl);
+
+  font-family: var(--font-f-text);
+  font-size: var(--font-s-h6);
+  font-weight: var(--font-w-medium);
+  letter-spacing: 0.5px;
+  text-wrap-mode: nowrap;
+
+  color: var(--color-text);
+
+  --bg-color: var(--color-primary);
+  --bg-color-light: oklch(from var(--bg-color) calc(l + 0.1) c h);
+  background: linear-gradient(var(--bg-color-light), var(--bg-color));
+
+  border: 2px solid var(--bg-color-light);
+  border-radius: var(--spacing-xs);
+
+  box-shadow: 0 2px 4px oklch(from black l c h / 0.5);
+
+  transition-property: border-color, box-shadow, translate;
+  transition-duration: 0.1s;
+
+  &.secondary {
+    --bg-color: var(--color-bg-light);
+  }
+
+  &:active {
+    box-shadow: 0 1px 1px oklch(from black l c h / 0.5);
+    translate: 0 1px;
+  }
+
+  >svg {
+    width: 1.3em;
+    height: 1.3em;
+  }
+}
+
+select {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text);
+  font: var(--p);
+  font-size: var(--font-s-h6);
+  padding: var(--spacing-xs) var(--spacing-s);
+  border: 1px solid var(--color-bg-light);
+  border-radius: var(--spacing-2xs);
+  min-width: 150px;
+
+  option:checked {
+    background-color: var(--color-primary);
+  }
+}
