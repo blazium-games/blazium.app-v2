@@ -174,12 +174,12 @@ export default ({ loaderData }: Route.ComponentProps) => {
           <ul>
             <li>
               <Link to={`https://cdn.blazium.app/release/${data.version}/Blazium_v${data.version}_export_templates.tpz`} download>
-                For {data.buildType} {data.version}
+                Get for or {data.buildType} {data.version}
               </Link>
             </li>
             <li>
               <Link to={`https://cdn.blazium.app/release/${data.version}/Blazium_v${data.version}_mono_export_templates.tpz`} download>
-                For {data.buildType} {data.version} .NET
+                Get for {data.buildType} {data.version} .NET
               </Link>
             </li>
           </ul>
