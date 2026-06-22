@@ -76,6 +76,18 @@ export type DigitalStore = {
   icon: IconType,
 };
 
+export type FeatureData = {
+  img: string,
+  title: string,
+  description: string,
+  link: string,
+}
+
+export type FeatureCategory = {
+  title: string,
+  features: FeatureData[],
+};
+
 export function getPrettyOS(os: OperatingSystem) {
   switch (os) {
     case "android": return "Android";

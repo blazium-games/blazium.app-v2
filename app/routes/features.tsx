@@ -1,7 +1,8 @@
 import type { Route } from "./+types/features";
 import style from "css/features.module.css";
-import { MetaTags } from "comps/metatags";
 import { Link } from "react-router";
+import { MetaTags } from "~/components/metatags";
+import { featureList } from "~/data/features";
 
 /* 
   - godot compatibility
@@ -10,27 +11,74 @@ import { Link } from "react-router";
   - why blazium instead of godot/redot/other engines
 */
 
+/*
+- GOAP Framework
+- BigNum++ Integration
+- Microsoft's GDK integration
+- Dev Tools
+  - MCP Server for the Editor
+  - Autowork Unit Tests Framework
+  - POGR API
+  - Multi User Editor support
+- Web Export Improvements
+  - React Bridge API
+  - Discord Activities API and export options
+  - YouTube Playables API and export options
+  - Web export Metatags options
+- Data management and File formats
+  - SQLite file import and API
+  - CSV files import and API
+  - INI files import and API
+  - DotENV Support
+  - Tiled files import
+- Client and Server interactions
+  - IRC Client
+  - HTTP Server
+  - RCON Server & Client
+  - General Porpouse ENET Server & Client
+  - JWT API
+  - SocketIO Client
+- Content Creator Stuff
+  - Twitch API
+  - Kick API
+  - OBS Client
+  - Crowd Control API
+
+To Be Merged
+- Steam integration API (auth, user info, inventory, stats, drops, archivements)
+*/
+
+function FeatureCard({ data }: { data: any }) {
+  return (
+    <article className={style["featurecard-article"]}>
+      <img src={"/assets/images/GitHub.png"} alt={data.title} />
+      <div>
+        <h3>{data.title}</h3>
+        <p>{data.description}</p>
+        <Link to={data.link}>Learn More</Link>
+      </div>
+    </article>
+  )
+}
+
 export default ({ }: Route.ComponentProps) => {
   return <>
     <MetaTags />
     <main className={style["main"]}>
-      <section>
-        <h1>Features</h1>
-        <p>
-          fork of godot, various 2d, 3d, xr features.
-        </p>
-        <Link to="from-godot">See our migration guide</Link>
-      </section>
-      <section>
-        <h2>First-Party Features</h2>
-        <p>
-          lots of modules!
-        </p>
-      </section>
-      <section>
-        <h2>call to action</h2>
-        <Link to="/download">Get Blazium Engine</Link>
-      </section>
+      <h1>Features</h1>
+      <p>
+        From games to applications across PC, console and XR, Blazium Engine
+        gives you everything you need to start, ship, grow and stand out from
+        the crowd.
+      </p>
+      {featureList.map(category => (
+        <details>
+          <summary><h2>{category.title}</h2></summary>
+          {category.features.map(feature => (
+            <FeatureCard data={feature} />
+          ))}
+        </details>
+      ))}
     </main>
   </>
 }

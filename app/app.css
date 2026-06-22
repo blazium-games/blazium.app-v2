@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 html {
-  --color-bg-dark: oklch(0.25 0.05 290);
-  --color-bg: oklch(0.28 0.05 290);
-  --color-bg-light: oklch(0.32 0.05 290);
+  --hue: 295;
+  --color-bg-dark: oklch(0.25 0.05 var(--hue));
+  --color-bg: oklch(0.28 0.05 var(--hue));
+  --color-bg-light: oklch(0.32 0.05 var(--hue));
 
-  --color-text: oklch(0.95 0.05 290);
+  --color-text: oklch(0.95 0.05 var(--hue));
   --color-text-muted: oklch(from var(--color-text) l c h / 0.8);
 
   --color-primary: oklch(0.50 0.20 300);
