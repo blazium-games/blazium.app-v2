@@ -10,12 +10,29 @@ export default ({ }: Route.ComponentProps) => {
     <main className={style["main"]}>
       <h1>press-kit</h1>
       <section>
+        <h2>Logo</h2>
+        <div>
+          <img src={`${path}/Logo/SVG/Blazium_Logo.svg`} alt="1" className={style["light_bg"]} />
+          <img src={`${path}/Logo/SVG/Blazium_Logo_White_Outline.svg`} alt="1" className={style["dark_bg"]} />
+          <img src={`${path}/Logo/SVG/Blazium_Logo_Black_Outline.svg`} alt="1" className={style["light_bg"]} />
+        </div>
+      </section>
+      <section>
         <h2>Horizontal</h2>
         <div>
-          <img src={`${path}/Logo & Wordmark (horizontal)/SVG/Blazium_Logo_Light_Text.svg`} alt="1" />
-          <img src={`${path}/Logo & Wordmark (horizontal)/SVG/Blazium_Logo_Light_Text.svg`} alt="2" />
-          <img src={`${path}/Logo & Wordmark (horizontal)/SVG/Blazium_Logo_Light_Text.svg`} alt="3" />
-          <img src={`${path}/Logo & Wordmark (horizontal)/SVG/Blazium_Logo_Light_Text.svg`} alt="4" />
+          <img src={`${path}/Logo & Wordmark (horizontal)/SVG/Blazium_Logo_Light_Text.svg`} alt="1" className={style["dark_bg"]} />
+          <img src={`${path}/Logo & Wordmark (horizontal)/SVG/Blazium_Logo_Dark_Text.svg`} alt="1" className={style["light_bg"]} />
+          <img src={`${path}/Logo & Wordmark (horizontal)/SVG/Blazium_Logo_White_Outline.svg`} alt="1" className={style["dark_bg"]} />
+          <img src={`${path}/Logo & Wordmark (horizontal)/SVG/Blazium_Logo_Black_Outline.svg`} alt="1" className={style["light_bg"]} />
+        </div>
+      </section>
+      <section>
+        <h2>Vertical</h2>
+        <div>
+          <img src={`${path}/Logo & Wordmark (vertical)/SVG/Blazium_Logo_Light_Text.svg`} alt="1" className={style["dark_bg"]} />
+          <img src={`${path}/Logo & Wordmark (vertical)/SVG/Blazium_Logo_Dark_Text.svg`} alt="1" className={style["light_bg"]} />
+          <img src={`${path}/Logo & Wordmark (vertical)/SVG/Blazium_Logo_White_Outline.svg`} alt="1" className={style["dark_bg"]} />
+          <img src={`${path}/Logo & Wordmark (vertical)/SVG/Blazium_Logo_Black_Outline.svg`} alt="1" className={style["light_bg"]} />
         </div>
       </section>
     </main>
