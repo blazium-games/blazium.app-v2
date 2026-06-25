@@ -7,11 +7,22 @@
 
     summary {
       padding: var(--spacing-m);
-      display: block;
+      display: flex;
+
+      svg {
+        font: var(--h5);
+        color: var(--color-text-muted);
+        transition: rotate 0.2s;
+      }
 
       h2 {
+        margin-left: var(--spacing-s);
         font-size: var(--font-s-h5);
       }
+    }
+
+    &[open]>summary>svg {
+      rotate: 180deg;
     }
   }
 }

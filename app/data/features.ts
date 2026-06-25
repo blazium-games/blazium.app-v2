@@ -12,6 +12,16 @@ const base: FeatureCategory = {
     title: "XR support",
     description: "",
     link: "",
+  }, {
+    img: "",
+    title: "Steam API for your games",
+    description: "Auth, inventory, drops, archivements, stats, user info",
+    link: "",
+  }, {
+    img: "",
+    title: "Discord Social SDK",
+    description: "",
+    link: "",
   }]
 } as const;
 

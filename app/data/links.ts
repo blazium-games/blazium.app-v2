@@ -4,7 +4,7 @@ export const links = {
   youtube: "https://youtube.com/@blazium",
   itchio: "https://itch.io/profile/blaziumengine",
   indiedb: "https://www.indiedb.com/engines/blazium-engine/articles",
-  discord: "https://blazium.app/chat",
+  discord: "https://discord.gg/s5NSmcRJge",
   github: "https://github.com/blazium-games",
 
   website_repo: "https://github.com/blazium-games/blazium.app",

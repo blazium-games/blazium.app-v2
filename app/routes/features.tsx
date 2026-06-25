@@ -3,6 +3,7 @@ import style from "css/features.module.css";
 import { Link } from "react-router";
 import { MetaTags } from "~/components/metatags";
 import { featureList } from "~/data/features";
+import { FaChevronCircleDown } from "react-icons/fa";
 
 /* 
   - godot compatibility
@@ -73,7 +74,7 @@ export default ({ }: Route.ComponentProps) => {
       </p>
       {featureList.map(category => (
         <details>
-          <summary><h2>{category.title}</h2></summary>
+          <summary><FaChevronCircleDown /><h2>{category.title}</h2></summary>
           {category.features.map(feature => (
             <FeatureCard data={feature} />
           ))}
