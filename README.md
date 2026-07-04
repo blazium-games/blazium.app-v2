@@ -1,5 +1,9 @@
 # blazium.app
 
+**WIP** future blazium.app
+
+## useful links
+
 https://cdn.blazium.app/release/0.5.246/changelog.txt
 https://cdn.blazium.app/release/0.5.246/changelog.html
 https://cdn.blazium.app/release/0.5.246/templates.json
