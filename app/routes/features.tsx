@@ -1,8 +1,9 @@
 import type { Route } from "./+types/features";
 import style from "css/features.module.css";
-import { Link } from "react-router";
 import { MetaTags } from "~/components/metatags";
+import { AppLink } from "comps/AppLink";
 import { featureList } from "~/data/features";
+import { publicAsset } from "~/lib/publicAsset";
 import { FaChevronCircleDown } from "react-icons/fa";
 
 /* 
@@ -52,11 +53,11 @@ To Be Merged
 function FeatureCard({ data }: { data: any }) {
   return (
     <article className={style["featurecard-article"]}>
-      <img src={"/assets/images/GitHub.png"} alt={data.title} />
+      <img src={publicAsset("images/sponsors/GitHub_Lockup_White.svg")} alt={data.title} />
       <div>
         <h3>{data.title}</h3>
         <p>{data.description}</p>
-        <Link to={data.link}>Learn More</Link>
+        <AppLink to={data.link}>Learn More</AppLink>
       </div>
     </article>
   )

@@ -3,12 +3,13 @@ import style from "css/developers.module.css";
 import { MetaTags } from "comps/metatags";
 import type { Developer } from "~/types";
 import { developers } from "~/data/developers";
+import { publicAsset } from "~/lib/publicAsset";
 
 function DevCard({ data }: { data: Developer }) {
   return (
     <article className={style["devcard-article"]} title={data.name}>
       <img
-        src={data.image ?? "/assets/images/placeholder.svg"}
+        src={data.image ?? publicAsset("images/placeholder.svg")}
         alt={`${data.name}`}
       />
       <div>

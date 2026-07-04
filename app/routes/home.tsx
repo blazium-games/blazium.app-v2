@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import style from "css/home.module.css";
 import { MetaTags } from "comps/metatags";
-import { Link } from "react-router";
+import { AppLink } from "comps/AppLink";
 
 export default ({ }: Route.ComponentProps) => {
   return <>
@@ -12,8 +12,8 @@ export default ({ }: Route.ComponentProps) => {
           <h1>Blazium Game Engine</h1>
           <p>The stable Godot fork, with features that matter.</p>
           <div>
-            <Link to="/download" className="button">Download</Link>
-            <Link to="/features" className="button secondary">Features</Link>
+            <AppLink to="/download" className="button">Download</AppLink>
+            <AppLink to="/features" className="button secondary">Features</AppLink>
           </div>
         </div>
       </section>
@@ -30,8 +30,8 @@ export default ({ }: Route.ComponentProps) => {
           can start today with no project changes.
         </p>
         <div>
-          <Link to="/features" className="button">Explore all features</Link>
-          <Link to="/from-godot" className="button">Migrating from Godot</Link>
+          <AppLink to="/features" className="button">Explore all features</AppLink>
+          <AppLink to="/from-godot" className="button">Migrating from Godot</AppLink>
         </div>
       </section>
       <section>
@@ -65,7 +65,7 @@ export default ({ }: Route.ComponentProps) => {
             POGR's game-matching services without leaving Godot.
           </li>
         </ul>
-        <Link to="/features" className="button">Full list of integrations</Link>
+        <AppLink to="/features" className="button">Full list of integrations</AppLink>
       </section>
       <section>
         <h2>Built-in MCP Server</h2>
@@ -75,14 +75,14 @@ export default ({ }: Route.ComponentProps) => {
           modify nodes, run scripts and automate workflows in real time.
         </p>
         <p>Supercharge your productivity with AI-assisted development.</p>
-        <Link to="/features" className="button">Learn more about MCP</Link>
+        <AppLink to="/features" className="button">Learn more about MCP</AppLink>
       </section>
       <section>
         <h2>Ready to build?</h2>
         <p>Join the community-driven engine that puts developers first.</p>
         <div>
-          <Link to="/download" className="button">Download Blazium</Link>
-          <Link to="/features" className="button secondary">See all Features</Link>
+          <AppLink to="/download" className="button">Download Blazium</AppLink>
+          <AppLink to="/features" className="button secondary">See all Features</AppLink>
         </div>
       </section>
     </main>

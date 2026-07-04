@@ -1,7 +1,7 @@
 import type { Route } from "./+types/from-godot";
 import style from "css/from-godot.module.css";
 import { MetaTags } from "comps/metatags";
-import { Link } from "react-router";
+import { AppLink } from "comps/AppLink";
 
 export default ({ }: Route.ComponentProps) => {
   return <>
@@ -24,7 +24,7 @@ export default ({ }: Route.ComponentProps) => {
       </section>
       <section>
         <h2>call to action</h2>
-        <Link to="/download">Get Blazium Engine</Link>
+        <AppLink to="/download">Get Blazium Engine</AppLink>
       </section>
     </main>
   </>

@@ -4,6 +4,7 @@ import { MetaTags } from "comps/metatags";
 import { getArchs, getBuildsData, getOsList, getVersions, hasDotnetSupport } from "~/components/builds_data.server";
 import { getIconOS, getPrettyArch, getPrettyOS, type BuildType } from "~/types";
 import { Link, useFetcher } from "react-router";
+import { AppLink } from "comps/AppLink";
 import { useRef } from "react";
 import { digitalStores } from "~/data/stores";
 
@@ -165,7 +166,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
             {data.size && <SizeSpan bytes={data.size} />} &ndash; {data.timestamp && <Timestamp timestamp={data.timestamp} />}
           </span>
         </div>
-        <Link to={`/changelog?buildtype=${data.buildType}&version=${data.version}`} className="button secondary">View Changelog</Link>
+        <AppLink to={`/changelog?buildtype=${data.buildType}&version=${data.version}`} className="button secondary">View Changelog</AppLink>
         <div>
           <div>
             <h2>Export Templates</h2>

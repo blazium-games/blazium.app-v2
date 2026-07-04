@@ -1,25 +1,29 @@
 import type { Route } from "./+types/layout";
 import style from "css/layout.module.css";
-import { Link, NavLink, Outlet } from "react-router";
+import { Outlet } from "react-router";
+import { AppLink, AppNavLink } from "comps/AppLink";
 import { links } from "~/data/links";
+import { publicAsset } from "~/lib/publicAsset";
+
+const logoSrc = publicAsset("images/Brand Kit/Logo/SVG/Blazium_Logo.svg");
 
 export const Header = () => {
   return (
     <header className={style["header"]}>
-      <Link to="#main-content" reloadDocument>Skip to main content</Link>
+      <AppLink to="#main-content" reloadDocument>Skip to main content</AppLink>
       <nav>
-        <Link to="/">
-          <img src="/favicon.ico" alt="Blazium Logo" height={24} width={24} />
+        <AppLink to="/">
+          <img src={logoSrc} alt="Blazium Logo" height={24} width={24} />
           <span>Blazium</span>
-        </Link>
+        </AppLink>
         <div>
-          <NavLink to="/download">Download</NavLink>
-          <NavLink to="/features">Features</NavLink>
-          <NavLink to="/from-godot">From Godot</NavLink>
+          <AppNavLink to="/download">Download</AppNavLink>
+          <AppNavLink to="/features">Features</AppNavLink>
+          <AppNavLink to="/from-godot">From Godot</AppNavLink>
         </div>
       </nav>
       <nav>
-        <Link to={links.documentation}>Documentation</Link>
+        <AppLink to={links.documentation}>Documentation</AppLink>
       </nav>
     </header>
   )
@@ -31,28 +35,28 @@ export const Footer = () => {
       <nav>
         <div>
           <h2>Get started</h2>
-          <Link to="/download">Download</Link>
-          <Link to="/features">Features</Link>
-          <Link to="/from-godot">From Godot</Link>
-          <Link to={links.documentation}>Documentation</Link>
-          <Link to="/changelog">Changelog</Link>
+          <AppLink to="/download">Download</AppLink>
+          <AppLink to="/features">Features</AppLink>
+          <AppLink to="/from-godot">From Godot</AppLink>
+          <AppLink to={links.documentation}>Documentation</AppLink>
+          <AppLink to="/changelog">Changelog</AppLink>
         </div>
         <div>
           <h2>Resources</h2>
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/sponsors">Sponsors</Link>
-          <Link to="/developers">Developers</Link>
-          <Link to="/press-kit">Press Kit</Link>
-          <Link to="/license">License</Link>
+          <AppLink to="/privacy-policy">Privacy Policy</AppLink>
+          <AppLink to="/sponsors">Sponsors</AppLink>
+          <AppLink to="/developers">Developers</AppLink>
+          <AppLink to="/press-kit">Press Kit</AppLink>
+          <AppLink to="/license">License</AppLink>
         </div>
         <div>
           <h2>Follow us</h2>
-          <Link to="/chat">Discord</Link>
-          <Link to={links.github}>GitHub</Link>
-          <Link to={links.indiedb}>IndieDB</Link>
-          <Link to={links.twitter}>X/Twitter</Link>
-          <Link to={links.youtube}>YouTube</Link>
-          <Link to={links.itchio}>itch.io</Link>
+          <AppLink to="/chat">Discord</AppLink>
+          <AppLink to={links.github}>GitHub</AppLink>
+          <AppLink to={links.indiedb}>IndieDB</AppLink>
+          <AppLink to={links.twitter}>X/Twitter</AppLink>
+          <AppLink to={links.youtube}>YouTube</AppLink>
+          <AppLink to={links.itchio}>itch.io</AppLink>
         </div>
       </nav>
       <small>&copy; 2024-{new Date().getFullYear()} Blazium Games & contributors.</small>

@@ -2,5 +2,6 @@
 node_modules
 .react-router
 build
+public/builds-data.json
 .env.local
 .env.*.local

@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
+    "build:pages": "react-router build",
+    "fetch-data": "node scripts/fetch-builds-data.mjs",
     "dev": "react-router dev --host",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.28.5",
     "@react-router/dev": "^7.14.2",
+    "@types/node": "^26.1.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "typescript": "^6.0.3",

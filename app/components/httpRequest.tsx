@@ -19,9 +19,9 @@ export async function httpRequest<T = any>(
 
     const init: RequestInit = {
       method: params?.method || "GET",
-      headers: params?.headers || undefined,
-      body,
     };
+    if (params?.headers) init.headers = params.headers;
+    if (body !== undefined) init.body = body;
     const response = await fetch(url, init);
     const data = await response.json();
     if (!response.ok) {

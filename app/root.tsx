@@ -8,6 +8,8 @@ import {
   ScrollRestoration,
 } from "react-router";
 import { isbot } from "isbot";
+import { ORIGIN } from "~/env";
+import { publicAsset } from "~/lib/publicAsset";
 
 export default ({ loaderData }: Route.ComponentProps) => {
   return (
@@ -26,7 +28,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
         <meta name="twitter:url" content={loaderData.url} />
         <meta name="twitter:creator" content="" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href={publicAsset("logo.svg")} type="image/svg+xml" />
         <link rel="canonical" href={loaderData.url} />
         <Links />
       </head>
@@ -40,9 +42,10 @@ export default ({ loaderData }: Route.ComponentProps) => {
 }
 
 export function loader({ request, context }: Route.LoaderArgs) {
+  const origin = ORIGIN || new URL(request.url).origin;
   return {
     isBot: isbot(request.headers.get("user-agent")),
-    url: "https://blazium.app",
+    url: origin,
     context: context,
   };
 }

@@ -1,8 +1,9 @@
 import type { Route } from "./+types/press-kit";
 import style from "css/press-kit.module.css";
 import { MetaTags } from "comps/metatags";
+import { publicAsset } from "~/lib/publicAsset";
 
-const path = "/assets/images/Brand Kit";
+const path = publicAsset("images/Brand Kit");
 
 export default ({ }: Route.ComponentProps) => {
   return <>
