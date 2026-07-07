@@ -4,6 +4,7 @@ import { Outlet } from "react-router";
 import { AppLink, AppNavLink } from "comps/AppLink";
 import { links } from "~/data/links";
 import { publicAsset } from "~/lib/publicAsset";
+import { DEVENV, GITHUB_PAGES } from "~/env";
 
 const logoSrc = publicAsset("images/Brand Kit/Logo/SVG/Blazium_Logo.svg");
 
@@ -59,7 +60,13 @@ export const Footer = () => {
           <AppLink to={links.itchio}>itch.io</AppLink>
         </div>
       </nav>
-      <small>&copy; 2024-{new Date().getFullYear()} Blazium Games & contributors.</small>
+      <section>
+        <small>
+          {DEVENV ? "DEV" : GITHUB_PAGES ? "GH_PAGES" : "PROD"}
+          {" | "}
+          &copy; 2024-{new Date().getFullYear()} Blazium Games & contributors.
+        </small>
+      </section>
     </footer>
   )
 }

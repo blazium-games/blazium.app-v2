@@ -162,9 +162,9 @@ export default ({ loaderData }: Route.ComponentProps) => {
           <Link to={data.download_url ?? ""} download className="button">
             {getIconOS(data.os ?? "windows")} Get {data.buildType} {data.version} {data.dotnet && ".NET"}
           </Link>
-          <span>
+          <small>
             {data.size && <SizeSpan bytes={data.size} />} &ndash; {data.timestamp && <Timestamp timestamp={data.timestamp} />}
-          </span>
+          </small>
         </div>
         <AppLink to={`/changelog?buildtype=${data.buildType}&version=${data.version}`} className="button secondary">View Changelog</AppLink>
         <div>

@@ -1,23 +1,25 @@
 .main {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: var(--spacing-xl);
+  grid-template-columns: auto min-content;
+  gap: var(--spacing-m) var(--spacing-2xs);
+  max-width: 900px;
 
   h1 {
-    font: var(--h2);
+    font: var(--h3);
     text-align: center;
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-m);
     grid-area: auto / span 2;
   }
 
   h2 {
     font: var(--h4);
+    color: var(--color-text-muted);
   }
 
   >section {
     background-color: var(--color-bg);
-    padding: var(--spacing-xl);
-    border-radius: var(--spacing-s);
+    padding: var(--spacing-s);
+    border-radius: var(--spacing-xs);
     border: 1px solid var(--color-bg-light);
   }
 }
@@ -34,7 +36,7 @@
       font-variant-numeric: tabular-nums;
     }
 
-    span {
+    small {
       margin-top: var(--spacing-xs);
       color: var(--color-text-muted);
       text-align: center;
@@ -43,12 +45,12 @@
 
   >div,
   >div+a {
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-m);
   }
 
   >div+a {
     vertical-align: top;
-    margin-left: var(--spacing-m);
+    margin-left: var(--spacing-s);
   }
 
   form {
@@ -57,19 +59,19 @@
       width: fit-content;
       border-radius: var(--spacing-2xs);
       border: 1px solid var(--color-bg-light);
-      padding: var(--spacing-2xs);
       display: flex;
 
       label {
         user-select: none;
         cursor: pointer;
-        padding: var(--spacing-xs) var(--spacing-s);
+        padding: var(--spacing-2xs) var(--spacing-xs);
         font: var(--h6);
         border-radius: var(--spacing-2xs);
         border: 2px solid transparent;
-        letter-spacing: 0.5px;
+        color: var(--color-text-muted);
 
         &:has(:checked) {
+          color: var(--color-text);
           background-color: oklch(from var(--color-primary) l c h / 0.7);
           border-color: var(--color-primary);
         }
@@ -79,7 +81,7 @@
     >fieldset:nth-of-type(2) {
       margin-top: var(--spacing-m);
       display: flex;
-      gap: var(--spacing-m);
+      gap: var(--spacing-xs);
       align-items: center;
 
       label {
@@ -98,16 +100,20 @@
 
   >div:nth-of-type(2) {
     border-top: 1px solid var(--color-bg-light);
-    padding-top: var(--spacing-m);
+    padding-top: var(--spacing-xs);
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--spacing-m);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-s);
+    color: var(--color-text-muted);
+    align-items: center;
   }
 }
 
 .stores-section {
+  min-width: 200px;
+
   ul {
-    margin-top: var(--spacing-m);
+    margin-top: var(--spacing-xs);
     list-style: none;
   }
 
