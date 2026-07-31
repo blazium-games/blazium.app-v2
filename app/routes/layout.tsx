@@ -64,7 +64,7 @@ export const Footer = () => {
         <small>
           {DEVENV ? "DEV" : GITHUB_PAGES ? "GH_PAGES" : "PROD"}
           {" | "}
-          &copy; 2024-{new Date().getFullYear()} Blazium Games & contributors.
+          &copy; MIT 2024-{new Date().getFullYear()} Blazium Games & contributors.
         </small>
       </section>
     </footer>

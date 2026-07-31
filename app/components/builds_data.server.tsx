@@ -1,4 +1,11 @@
-import type { Architecture, BuildsData, BuildType, EditorData, OperatingSystem, VersionData } from "~/types";
+import type {
+  Architecture,
+  BuildsData,
+  BuildType,
+  EditorData,
+  OperatingSystem,
+  VersionData,
+} from "~/types";
 
 const maxAge = 1000 * 60 * 60 * 6; // 6 Hours
 
@@ -53,7 +60,7 @@ export function hasDotnetSupport(data: BuildsData, type: BuildType, version: str
 }
 
 async function getBuildTypeData(type: BuildType) {
-  const response = await fetch(`https://blazium.app/api/versions/data/${type}`);
+  const response = await fetch(`https://cdn.blazium.app/catalog/versions/${type}.json`);
 
   if (!response.ok) {
     return null;
