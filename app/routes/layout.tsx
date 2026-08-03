@@ -21,6 +21,7 @@ export const Header = () => {
           <AppNavLink to="/download">Download</AppNavLink>
           <AppNavLink to="/features">Features</AppNavLink>
           <AppNavLink to="/from-godot">From Godot</AppNavLink>
+          <AppNavLink to="/blog">Blog</AppNavLink>
         </div>
       </nav>
       <nav>
@@ -44,11 +45,11 @@ export const Footer = () => {
         </div>
         <div>
           <h2>Resources</h2>
+          <AppLink to="/blog">Blog</AppLink>
           <AppLink to="/privacy-policy">Privacy Policy</AppLink>
           <AppLink to="/sponsors">Sponsors</AppLink>
           <AppLink to="/developers">Developers</AppLink>
           <AppLink to="/press-kit">Press Kit</AppLink>
-          <AppLink to="/license">License</AppLink>
         </div>
         <div>
           <h2>Follow us</h2>

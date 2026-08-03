@@ -1,6 +1,7 @@
 import { copyFileSync, existsSync, readdirSync, renameSync, rmSync, statSync } from "node:fs";
 import { join } from "node:path";
 import type { Config } from "@react-router/dev/config";
+import type { ArticlesIndex } from "~/types";
 
 const isPagesPreview = process.env["GITHUB_PAGES"] === "true";
 const pagesBase = "/blazium.app-v2/";
@@ -15,7 +16,19 @@ const pagesPrerender = [
   "/from-godot",
   "/privacy-policy",
   "/press-kit",
+  "/blog",
 ];
+
+async function getArticlesSlugs() {
+  const response = await fetch(`https://cdn.blazium.app/articles/index.json`);
+
+  if (!response.ok) {
+    return [];
+  }
+
+  const index: ArticlesIndex = await response.json();
+  return index.items.map(article => article.slug);
+}
 
 function moveBuildEntry(src: string, dest: string) {
   if (!existsSync(dest)) {
@@ -38,8 +51,15 @@ function moveBuildEntry(src: string, dest: string) {
 export default {
   ssr: true,
   basename: isPagesPreview ? pagesBase : "/",
-  prerender: isPagesPreview ? pagesPrerender : ["privacy-policy"],
   routeDiscovery: isPagesPreview ? { mode: "initial" } : undefined,
+  async prerender() {
+    if (!isPagesPreview) return ["privacy-policy"]
+    let articlesSlugs = await getArticlesSlugs();
+    return [
+      ...pagesPrerender,
+      ...articlesSlugs.map((s) => `/articles/${s}`),
+    ];
+  },
   buildEnd(args) {
     if (!isPagesPreview || !args.viteConfig.isProduction) return;
 

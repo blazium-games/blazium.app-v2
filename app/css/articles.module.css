@@ -1,0 +1,13 @@
+.main {
+  max-width: 900px;
+
+  img {
+    width: 100%;
+  }
+
+  >section {
+    >*+* {
+      margin-top: 0.5em;
+    }
+  }
+}

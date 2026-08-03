@@ -81,11 +81,46 @@ export type FeatureData = {
   title: string,
   description: string,
   link: string,
-}
+};
 
 export type FeatureCategory = {
   title: string,
   features: FeatureData[],
+};
+
+export type ArticleHost = {
+  name: string,
+  url: string,
+};
+
+export type ArticleIndexData = {
+  slug: string,
+  title: string,
+  description: string,
+  cover: string,
+  date: string,
+  hosts: ArticleHost[],
+  link: string,
+  guid: string,
+};
+
+export type ArticlesIndex = {
+  generated_at: string,
+  count: number,
+  items: ArticleIndexData[],
+};
+
+export type ArticleMetadata = {
+  slug: string,
+  title: string,
+  description: string,
+  cover: string,
+  date: string,
+  changes: string,
+  hosts: ArticleHost[],
+  link: string,
+  content_bbcode: string,
+  content_md: string,
 };
 
 export function getPrettyOS(os: OperatingSystem) {

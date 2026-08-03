@@ -14,7 +14,8 @@ export default [
     route("from-godot", "routes/from-godot.tsx"),
     route("privacy-policy", "routes/privacy-policy.tsx"),
     route("press-kit", "routes/press-kit.tsx"),
-    // route("license", "routes/license.tsx"),
+    route("blog", "routes/blog.tsx"),
+    route("articles/:slug", "routes/articles.tsx"),
 
     route("*", "routes/404.tsx"),
   ]),
