@@ -36,11 +36,14 @@ export default ({ loaderData }: Route.ComponentProps) => {
       image={metadata.cover}
     />
     <main className={style["main"]}>
-      <time dateTime={metadata.date}>{
-        new Date(metadata.date).toLocaleDateString(undefined, { dateStyle: "long" })
-      }</time>
-      <h1>{metadata.title}</h1>
       <img src={metadata.cover} alt={metadata.title} />
+      <div>
+        <time dateTime={metadata.date}>{
+          new Date(metadata.date).toLocaleDateString(undefined, { dateStyle: "long" })
+        }</time>
+        <h1>{metadata.title}</h1>
+        <p>{metadata.description}</p>
+      </div>
       <section dangerouslySetInnerHTML={{ __html: loaderData.content }} />
   </main>
 </>

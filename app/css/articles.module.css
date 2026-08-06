@@ -1,11 +1,23 @@
 .main {
-  max-width: 900px;
+  margin-top: var(--spacing-xl);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-2xl) var(--spacing-m);
 
   img {
     width: 100%;
   }
 
+  >div {
+    grid-column: 2;
+    align-self: center;
+  }
+
   >section {
+    grid-column: span 2;
+    margin-inline: auto;
+    max-width: 800px;
+
     >*+* {
       margin-top: 0.5em;
     }
