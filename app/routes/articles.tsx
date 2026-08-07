@@ -41,6 +41,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
         <time dateTime={metadata.date}>{
           new Date(metadata.date).toLocaleDateString(undefined, { dateStyle: "long" })
         }</time>
+        <span>{metadata.author}</span>
         <h1>{metadata.title}</h1>
         <p>{metadata.description}</p>
       </div>

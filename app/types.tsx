@@ -117,6 +117,7 @@ export type ArticleMetadata = {
   cover: string,
   date: string,
   changes: string,
+  author: string,
   hosts: ArticleHost[],
   link: string,
   content_bbcode: string,

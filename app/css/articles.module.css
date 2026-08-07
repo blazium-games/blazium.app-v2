@@ -11,6 +11,10 @@
   >div {
     grid-column: 2;
     align-self: center;
+
+    >span {
+      display: block;
+    }
   }
 
   >section {
