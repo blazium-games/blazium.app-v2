@@ -17,17 +17,22 @@ export async function loader({ }: Route.LoaderArgs) {
 
 function ArticleCard({ data }: { data: ArticleIndexData }) {
   return (
-    <Link to={`/articles/${data.slug}`}>
-      <article className={style["article"]}>
-        <img src={data.cover} alt={data.slug} loading="lazy" />
+    <article className={style["article"]}>
+      <img src={data.cover} alt={data.slug} loading="lazy" />
+      <div>
+        <Link to={`/articles/${data.slug}`}><h2>{data.title}</h2></Link>
+        <p>{truncateText(data.description, 125)}</p>
         <time dateTime={data.date}>{
-          new Date(data.date).toLocaleDateString(undefined, { dateStyle: "long" })
+          new Date(data.date).toLocaleDateString("en-US", { dateStyle: "long" })
         }</time>
-        <h2>{data.title}</h2>
-        <p>{data.description}</p>
-      </article>
-    </Link>
+      </div>
+    </article>
   )
+}
+
+function truncateText(text: string, max: number): string {
+  if (text.length <= max) return text;
+  return `${text.slice(0, max - 1).trim()}…`;
 }
 
 export default ({ loaderData }: Route.ComponentProps) => {

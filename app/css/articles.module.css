@@ -1,4 +1,5 @@
 .main {
+  max-width: 1200px;
   margin-top: var(--spacing-xl);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -14,6 +15,14 @@
 
     >span {
       display: block;
+    }
+
+    h1 {
+      font: var(--h3);
+    }
+
+    p {
+      font-size: var(--font-s-h6);
     }
   }
 
