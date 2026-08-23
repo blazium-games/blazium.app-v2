@@ -9,9 +9,9 @@
 
   a[href*="#"] {
     position: fixed;
-    padding: var(--spacing-m);
-    top: var(--spacing-m);
-    left: var(--spacing-m);
+    padding: var(--spacing-xs);
+    top: var(--spacing-s);
+    left: var(--spacing-s);
     background-color: var(--color-bg-light);
     z-index: 1000;
     opacity: 0;

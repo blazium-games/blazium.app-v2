@@ -3,6 +3,7 @@ import style from "css/blog.module.css";
 import { MetaTags } from "comps/metatags";
 import type { ArticleIndexData, ArticlesIndex } from "~/types";
 import { Link } from "react-router";
+import { FaRss } from "react-icons/fa6";
 
 export async function loader({ }: Route.LoaderArgs) {
   const response = await fetch(`https://cdn.blazium.app/articles/index.json`);
@@ -21,7 +22,7 @@ function ArticleCard({ data }: { data: ArticleIndexData }) {
       <img src={data.cover} alt={data.slug} loading="lazy" />
       <div>
         <Link to={`/articles/${data.slug}`}><h2>{data.title}</h2></Link>
-        <p>{truncateText(data.description, 125)}</p>
+        <p>{truncateText(data.description, 120)}</p>
         <time dateTime={data.date}>{
           new Date(data.date).toLocaleDateString("en-US", { dateStyle: "long" })
         }</time>
@@ -40,7 +41,9 @@ export default ({ loaderData }: Route.ComponentProps) => {
     <MetaTags />
     <main className={style["main"]}>
       <h1>Blog</h1>
-      <Link to="https://cdn.blazium.app/articles/rss.xml">RSS Feed</Link>
+      <Link to="https://cdn.blazium.app/articles/rss.xml" target="_blank">
+        <FaRss /> RSS Feed
+      </Link>
       <section>
         {loaderData?.items.map(entry => <ArticleCard key={entry.slug} data={entry} />)}
       </section>

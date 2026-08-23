@@ -12,14 +12,14 @@
   }
 
   h2 {
-    font: var(--h4);
+    font: var(--h5);
     color: var(--color-text-muted);
   }
 
   >section {
     background-color: var(--color-bg);
-    padding: var(--spacing-s);
-    border-radius: var(--spacing-xs);
+    padding: var(--spacing-xs);
+    border-radius: var(--spacing-2xs);
     border: 1px solid var(--color-bg-light);
   }
 }
