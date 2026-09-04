@@ -1,16 +1,17 @@
 .main {
   >section {
-    margin-top: var(--spacing-m);
+    margin-top: var(--spacing-xs);
     background-color: var(--color-bg);
-    border-radius: var(--spacing-s);
-    border: 1px solid var(--color-bg-light);
-    padding: var(--spacing-xl);
+    border-radius: var(--card-border-radius);
+    border: var(--card-border);
+    padding: var(--spacing-xs);
 
     div {
-      margin-top: var(--spacing-s);
+      margin-top: var(--spacing-xs);
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--spacing-m);
+      gap: var(--spacing-2xs);
+      border-radius: var(--spacing-3xs);
     }
 
     &:first-of-type>div {
@@ -18,8 +19,8 @@
     }
 
     img {
-      border-radius: var(--spacing-s);
-      border: 2px solid var(--color-bg-light);
+      border-radius: var(--card-border-radius);
+      border: var(--card-border);
       width: 100%;
       background-image: conic-gradient(
         var(--bg-1) 0deg 90deg,

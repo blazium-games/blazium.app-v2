@@ -20,12 +20,12 @@ html {
   --font-f-heading: "Roboto", sans-serif;
   --font-f-text: "Inter", sans-serif;
 
-  --font-s-h1: 3.500rem;
-  --font-s-h2: 3.000rem;
-  --font-s-h3: 2.250rem;
-  --font-s-h4: 1.777rem;
-  --font-s-h5: 1.333rem;
-  --font-s-h6: 1.125rem;
+  --font-s-h1: 2.500rem;
+  --font-s-h2: 2.250rem;
+  --font-s-h3: 1.777rem;
+  --font-s-h4: 1.333rem;
+  --font-s-h5: 1.125rem;
+  --font-s-h6: 1.000rem;
   --font-s-p: 1.000rem;
   --font-s-small: 0.875rem;
 
@@ -43,6 +43,7 @@ html {
   --line-h-base: 1.25em;
   --line-h-loose: 1.50em;
 
+  --spacing-3xs: 0.125rem;
   --spacing-2xs: 0.25rem;
   --spacing-xs: 0.50rem;
   --spacing-s: 0.75rem;
@@ -56,10 +57,10 @@ html {
   --spacing-6xl: 10.00rem;
   --spacing-7xl: 15.00rem;
 
-  --h1: var(--font-w-semibold) var(--font-s-h1)/var(--line-h-base) var(--font-f-heading);
-  --h2: var(--font-w-semibold) var(--font-s-h2)/var(--line-h-base) var(--font-f-heading);
-  --h3: var(--font-w-semibold) var(--font-s-h3)/var(--line-h-base) var(--font-f-heading);
-  --h4: var(--font-w-semibold) var(--font-s-h4)/var(--line-h-base) var(--font-f-heading);
+  --h1: var(--font-w-semibold) var(--font-s-h1)/var(--line-h-tight) var(--font-f-heading);
+  --h2: var(--font-w-semibold) var(--font-s-h2)/var(--line-h-tight) var(--font-f-heading);
+  --h3: var(--font-w-semibold) var(--font-s-h3)/var(--line-h-tight) var(--font-f-heading);
+  --h4: var(--font-w-semibold) var(--font-s-h4)/var(--line-h-tight) var(--font-f-heading);
   --h5: var(--font-w-semibold) var(--font-s-h5)/var(--line-h-base) var(--font-f-heading);
   --h6: var(--font-w-semibold) var(--font-s-h6)/var(--line-h-base) var(--font-f-heading);
   --p: var(--font-w-normal) var(--font-s-p)/var(--line-h-base) var(--font-f-text);
@@ -136,8 +137,8 @@ html {
   hr {
     height: 1px;
     background-color: var(--color-bg-light);
-    margin-block: var(--spacing-xs) var(--spacing-m);
-    opacity: 0.2;
+    margin-block: var(--spacing-xs);
+    opacity: 0.5;
   }
 
   &:has(dialog:popover-open),
@@ -172,12 +173,19 @@ body {
 }
 
 main {
+  max-width: 1200px;
   margin-inline: auto;
-  padding-inline: var(--spacing-xl);
+  padding-inline: var(--spacing-2xs);
 
   a {
     color: oklch(from var(--color-primary) calc(l + 0.2) c h);
   }
+
+  --max-readable-width: 75ch;
+
+  --card-border-radius: 0 var(--spacing-2xs) var(--spacing-2xs) 0;
+  --card-border: 1px solid var(--color-bg-light);
+  --card-bg: linear-gradient(var(--color-bg-light), var(--color-bg) 50%);
 }
 
 button,
@@ -201,7 +209,7 @@ button,
 
   --bg-color: var(--color-primary);
   --bg-color-light: oklch(from var(--bg-color) calc(l + 0.1) c h);
-  background: linear-gradient(var(--bg-color-light), var(--bg-color));
+  background-image: linear-gradient(var(--bg-color-light), var(--bg-color));
 
   border: 2px solid var(--bg-color-light);
   border-radius: var(--spacing-2xs);

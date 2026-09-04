@@ -7,7 +7,7 @@ type TagsData = {
 }
 
 export const defaults: TagsData = {
-  title: "Blazium Engine",
+  title: "Blazium Game Engine",
   description: "Community-driven, powerful, and flexible. The stable Godot fork, with features that matter.",
   keywords: "Blazium Engine, Godot Engine, Community-driven, Networking, game dev",
   image: "",

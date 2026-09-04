@@ -14,9 +14,8 @@ const pagesPrerender = [
   "/developers",
   "/changelog",
   "/from-godot",
-  "/privacy-policy",
-  "/press-kit",
-  "/blog",
+  "/brand-kit",
+  "/news",
 ];
 
 async function getArticlesSlugs() {
@@ -53,11 +52,10 @@ export default {
   basename: isPagesPreview ? pagesBase : "/",
   routeDiscovery: isPagesPreview ? { mode: "initial" } : undefined,
   async prerender() {
-    if (!isPagesPreview) return ["privacy-policy"]
     let articlesSlugs = await getArticlesSlugs();
     return [
       ...pagesPrerender,
-      ...articlesSlugs.map((s) => `/articles/${s}`),
+      ...articlesSlugs.map((s) => `/news/${s}`),
     ];
   },
   buildEnd(args) {

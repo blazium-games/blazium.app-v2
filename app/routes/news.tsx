@@ -1,5 +1,5 @@
-import type { Route } from "./+types/blog";
-import style from "css/blog.module.css";
+import type { Route } from "./+types/news";
+import style from "css/news.module.css";
 import { MetaTags } from "comps/metatags";
 import type { ArticleIndexData, ArticlesIndex } from "~/types";
 import { Link } from "react-router";
@@ -21,7 +21,7 @@ function ArticleCard({ data }: { data: ArticleIndexData }) {
     <article className={style["article"]}>
       <img src={data.cover} alt={data.slug} loading="lazy" />
       <div>
-        <Link to={`/articles/${data.slug}`}><h2>{data.title}</h2></Link>
+        <Link to={data.slug}><h2>{data.title}</h2></Link>
         <p>{truncateText(data.description, 120)}</p>
         <time dateTime={data.date}>{
           new Date(data.date).toLocaleDateString("en-US", { dateStyle: "long" })
@@ -40,10 +40,12 @@ export default ({ loaderData }: Route.ComponentProps) => {
   return <>
     <MetaTags />
     <main className={style["main"]}>
-      <h1>Blog</h1>
-      <Link to="https://cdn.blazium.app/articles/rss.xml" target="_blank">
-        <FaRss /> RSS Feed
-      </Link>
+      <h1>News</h1>
+      <nav>
+        <Link to="https://cdn.blazium.app/articles/rss.xml" className="button secondary">
+          <FaRss /> RSS
+        </Link>
+      </nav>
       <section>
         {loaderData?.items.map(entry => <ArticleCard key={entry.slug} data={entry} />)}
       </section>

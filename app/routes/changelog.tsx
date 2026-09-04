@@ -1,23 +1,28 @@
 import type { Route } from "./+types/changelog";
 import style from "css/changelog.module.css";
 import { MetaTags } from "comps/metatags";
-import { Form, Link } from "react-router";
+import { Form, Link, redirect } from "react-router";
 import { getBuildsData, getVersions } from "~/components/builds_data.server";
 import type { BuildType } from "~/types";
+import { links } from "~/data/links";
 
-const repo = "https://github.com/blazium-games/blazium";
+export async function action({ request }: Route.LoaderArgs) {
+  const formData = await request.formData();
+  return redirect(`/changelog?v=${formData.get("buildtype")}_${formData.get("version")}`);
+}
 
 export async function loader({ request }: Route.LoaderArgs) {
-  const searchParams = new URL(request.url).searchParams
+  const v = new URL(request.url).searchParams.get("v");
+
   const data = await getBuildsData();
-  const buildType = searchParams.get("buildtype") as BuildType ?? "release";
+  const buildType = v?.split("_")[0] as BuildType | undefined ?? "release";
   const versions = getVersions(data, buildType);
-  const version = versions.find(v => v === searchParams.get("version")) ?? versions[0] ?? "";
+  const version = v?.split("_")[1] ?? versions[0] ?? "";
 
   const response = await fetch(`https://cdn.blazium.app/${buildType}/${version}/changelog.txt`);
 
   if (!response.ok) {
-    throw new Response(undefined, { status: 404 });
+    throw new Response(null, { status: 404 });
   }
 
   const text = await response.text();
@@ -73,17 +78,17 @@ function Commit({ data }: { data: any }) {
 
   return (
     <article className={style["commit-article"]}>
-      <h3>{data.message}</h3>
-      <p>
-        Commit <Link to={`${repo}/commit/${data.sha}`} target="_blank"><code>
+      <h3>
+        Commit <Link to={`${links.engine_repo}/commit/${data.sha}`} target="_blank"><code>
           {data.sha.slice(0, 7)}
-        </code></Link> by <Link to={`${repo}/commits?author=${data.user}`} target="_blank">
+        </code></Link> by <Link to={`${links.engine_repo}/commits?author=${data.user}`} target="_blank">
           <img src={`https://github.com/${data.user}.png?size=24`} alt={`${data.user}`} height={24} width={24} loading="lazy" />
           {data.user}
-        </Link> &ndash; <time dateTime={data.date} title={date.toLocaleString(undefined, datetimeOptions)}>
-          {date.toLocaleDateString(undefined, dateOptions)}
+        </Link> &ndash; <time dateTime={data.date} title={date.toLocaleString("en-US", datetimeOptions)}>
+          {date.toLocaleDateString("en-US", dateOptions)}
         </time>
-      </p>
+      </h3>
+      <p>{data.message}</p>
     </article>
   )
 }
@@ -94,7 +99,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
     <main className={style["main"]}>
       <h1>Blazium Engine Changelog</h1>
       <section>
-        <Form>
+        <Form method="POST">
           <label>
             <span>Build Type</span>
             <select name="buildtype" defaultValue={loaderData.info.buildType}>
@@ -117,13 +122,14 @@ export default ({ loaderData }: Route.ComponentProps) => {
         <div>
           <h2>Changelog for {loaderData.info.buildType} {loaderData.info.version}</h2>
           <div>
-            <Link to={`${repo}/compare/${loaderData.info.previousSHA}...${loaderData.info.currentSHA}`}><code>
+            <Link to={`${links.engine_repo}/compare/${loaderData.info.previousSHA}...${loaderData.info.currentSHA}`}><code>
               {loaderData.info.previousSHA.slice(0, 7)}&hellip;{loaderData.info.currentSHA.slice(0, 7)}
             </code></Link>
             <p><strong>{loaderData.info.totalCommits}</strong> <span>commits</span></p>
             <p><strong>{loaderData.info.totalContributors}</strong> <span>contributors</span></p>
           </div>
         </div>
+        <hr />
         {loaderData && loaderData.commits.map(commit => (<Commit key={commit.sha} data={commit} />))}
       </section>
     </main>

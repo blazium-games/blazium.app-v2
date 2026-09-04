@@ -1,174 +1,200 @@
 import type { FeatureCategory } from "~/types";
 
 const base: FeatureCategory = {
-  title: "Platform support",
+  title: "Core Engine",
   features: [{
     img: "",
-    title: "Cross-plaform development",
-    description: "",
+    title: "2D & 3D Game Development",
+    description: "Full-featured 2D and 3D game engine based on Godot 4.x with scene system, nodes, rendering, animation, and complete project compatibility.",
     link: "",
   }, {
     img: "",
-    title: "XR support",
-    description: "",
+    title: "Cross-platform Exports",
+    description: "One-click export to Windows, macOS, Linux, Android, iOS, Web, Steam Deck, and consoles while preserving full Godot 4.x project compatibility.",
     link: "",
   }, {
     img: "",
-    title: "Steam API for your games",
-    description: "Auth, inventory, drops, archivements, stats, user info",
+    title: "Physics Engines",
+    description: "Built-in 2D and 3D physics (Godot Physics) plus optional Jolt Physics module for high-performance rigid body simulation and collisions.",
+    link: "",
+  }, {
+    img: "",
+    title: "XR Support",
+    description: "Native OpenXR and mobile VR support for immersive AR/VR experiences with headset tracking, controllers, and cross-platform deployment.",
+    link: "",
+  }]
+} as const;
+
+const platform: FeatureCategory = {
+  title: "Platform Integrations",
+  features: [{
+    img: "",
+    title: "Steamworks",
+    description: "Native Steam API integration for authentication, inventory, drops, achievements, stats, user info, rich presence, and server auth without external extensions.",
     link: "",
   }, {
     img: "",
     title: "Discord Social SDK",
-    description: "",
+    description: "Native Discord Social SDK for rich presence, friends lists, activity invites, join requests, and seamless social features inside your games.",
+    link: "",
+  }, {
+    img: "",
+    title: "Microsoft GDK",
+    description: "Microsoft Game Development Kit support with export tooling, live services, and a built-in test suite for Xbox and Windows platforms.",
+    link: "",
+  }, {
+    img: "",
+    title: "Discord Activities",
+    description: "Publish games as Discord Embedded Apps / Activities with dedicated client node, export options, and integration with Blazium services.",
+    link: "",
+  }, {
+    img: "",
+    title: "YouTube Playables",
+    description: "Native YouTube Playables support via client node and dedicated web export options for easy browser-based game deployment.",
     link: "",
   }]
 } as const;
 
-const devtools: FeatureCategory = {
-  title: "Dev Tools",
+const data: FeatureCategory = {
+  title: "Data & Configuration",
   features: [{
     img: "",
-    title: "MCP Server for the Editor",
-    description: "The built-in MCP Server connects AI assistants directly to your Blazium projects through, enabling intelligent development workflows. It provides structured access to project files, engine resources, scenes, scripts, and development tools from compatible AI clients. Developers can automate repetitive tasks, accelerate content creation, and interact with their projects using natural language.",
+    title: "SQLite3",
+    description: "Native SQLite databases with resources, nodes, backups, BLOB handling, and advanced query tools for persistent game data.",
     link: "",
   }, {
     img: "",
-    title: "Built-In JWT Handling",
-    description: "The built-in JSON Web Token (JWT) API, enables secure authentication and data exchange for your projects. It supports token creation, parsing, validation, and cryptographic signing using both HS256 and RS256 algorithms with advanced features such as, claim verification, expiration checks, key rotation support, and token revocation through JTI blacklisting.",
+    title: "CSV Support",
+    description: "Built-in DotCSV module for reading and writing structured CSV files for game data, configs, and spreadsheet imports.",
     link: "",
   }, {
     img: "",
-    title: "Autowork Testing Framework",
-    description: "Autowork is a testing solution built directly into Blazium, designed for fast, reliable validation of game and application code. It supports unit, integration, and simulation testing, helping developers catch issues early and maintain confidence throughout development.",
-    link: "",
-  }, {
-    img: "",
-    title: "POGR API",
-    description: "Easly add analytics for your project with the powerful POGR API integrated into the engine.",
-    link: "",
-  }, {
-    img: "",
-    title: "SQLite API",
-    description: "Manage data",
-    link: "",
-  }, {
-    img: "",
-    title: "CSV & INI files handling and API",
-    description: "",
+    title: "INI Support",
+    description: "Lightweight DotINI module for parsing and writing INI configuration files with type-checking for settings and structured data.",
     link: "",
   }, {
     img: "",
     title: "DotENV Support",
-    description: "",
+    description: "Load and manage .env files and runtime variables to keep configuration and secrets out of source code.",
     link: "",
   }, {
     img: "",
-    title: "Tiled files import",
-    description: "",
+    title: "JWT Handling",
+    description: "Built-in JWT API for token creation, parsing, validation, and signing (HS256/RS256) with claim verification, expiration checks, key rotation, and JTI blacklisting.",
     link: "",
   }, {
     img: "",
-    title: "Built-In GOAP Framework",
-    description: "Build flexible, goal-driven AI directly inside your projects. Goal-Oriented Action Planning lets an agent decide what it wants to accomplish, inspect the current world state, and build a sequence of actions that moves the game toward that goal.",
-    link: "",
-  }, {
-    img: "",
-    title: "BigNum++ Integration",
-    description: "",
-    link: "",
-  }, {
-    img: "",
-    title: "Microsoft's GDK Integration",
-    description: "",
-    link: "",
-  }, {
-    img: "",
-    title: "Multi User Editor Support",
-    description: "",
+    title: "BigNum++",
+    description: "Arbitrary-precision arithmetic for incremental, idle, and simulation-heavy games that need extremely large or highly precise numbers.",
     link: "",
   }]
 } as const;
 
-const web: FeatureCategory = {
-  title: "Web Export Improvements",
+const networking: FeatureCategory = {
+  title: "Networking & Servers",
   features: [{
     img: "",
-    title: "Discord Activities API and Export Options",
-    description: "",
-    link: "",
-  }, {
-    img: "",
-    title: "YouTube Playables API and Export Options",
-    description: "",
-    link: "",
-  }, {
-    img: "",
-    title: "React Bridge API",
-    description: "",
-    link: "",
-  }]
-} as const;
-
-const contentcreation: FeatureCategory = {
-  title: "Content Creation",
-  features: [{
-    img: "",
-    title: "OBS Client",
-    description: "Connect directly to a running instance of OBS Studio (via its WebSocket protocol) and control virtually every aspect of your streaming or recording setup.",
-    link: "",
-  }, {
-    img: "",
-    title: "Crowd Control API",
-    description: "Seamless integration with the Crowd Control platform, enabling streamers and developers to let their live audience directly influence gameplay in real time.",
-    link: "",
-  }, {
-    img: "",
-    title: "Twitch API",
-    description: "Bring your games closer to the Twitch community with native, reliable API access. Whether for overlays, interactivity, or full audience-driven features.",
-    link: "",
-  }, {
-    img: "",
-    title: "Kick API",
-    description: "Multi-streamer tools, or interactive overlays, the new KickAPI module makes integration straightforward, reliable, and native to Blazium.",
-    link: "",
-  }]
-} as const;
-
-const clientserver: FeatureCategory = {
-  title: "Clients & Servers",
-  features: [{
-    img: "",
-    title: "ENET Server & Client",
-    description: "",
-    link: "",
-  }, {
-    img: "",
-    title: "RCON Server & Client",
-    description: "",
+    title: "ENet Server & Client",
+    description: "Enhanced low-level ENet module with flexible host/peer management and packet-level control, independent of the high-level multiplayer API.",
     link: "",
   }, {
     img: "",
     title: "HTTP Server",
-    description: "",
+    description: "Complete built-in HTTP server supporting REST APIs, static file serving, and Server-Sent Events (SSE).",
     link: "",
   }, {
     img: "",
-    title: "IRC Client",
-    description: "",
+    title: "RCON Server & Client",
+    description: "Full Source RCON protocol support for remote administration, console commands, and control of dedicated servers or in-game tools.",
     link: "",
   }, {
     img: "",
     title: "Socket.IO Client",
-    description: "Whether you're building the next multiplayer hit or a dynamic interactive tool, Socket.IO support is ready to power your connections.",
+    description: "Full Socket.IO v5 client for real-time bidirectional communication with namespaces, events, acknowledgments, binary data, and automatic reconnection.",
+    link: "",
+  }, {
+    img: "",
+    title: "IRC Client",
+    description: "Native IRC client for real-time chat connectivity, community features, bots, or multiplayer communication.",
+    link: "",
+  }]
+} as const;
+
+const streaming: FeatureCategory = {
+  title: "Streaming & Interactivity",
+  features: [{
+    img: "",
+    title: "OBS Client",
+    description: "Connect to OBS Studio via WebSocket and control virtually every aspect of streaming or recording setups from within Blazium.",
+    link: "",
+  }, {
+    img: "",
+    title: "Crowd Control",
+    description: "Native Crowd Control integration letting live audiences influence gameplay in real time through effects, parameters, and game packs.",
+    link: "",
+  }, {
+    img: "",
+    title: "Twitch API",
+    description: "Native high-performance Twitch Helix API access for overlays, interactivity, authentication, and audience-driven features.",
+    link: "",
+  }, {
+    img: "",
+    title: "Kick API",
+    description: "Native Kick.com integration for multi-streamer tools, interactive overlays, and reliable real-time audience features.",
+    link: "",
+  }]
+} as const;
+
+const tools: FeatureCategory = {
+  title: "Developer Tools",
+  features: [{
+    img: "",
+    title: "MCP Server",
+    description: "Built-in Model Context Protocol server connecting AI assistants to projects with structured access to files, scenes, scripts, and up to 308 tools for automation and natural-language workflows.",
+    link: "",
+  }, {
+    img: "",
+    title: "Multi-user Editor",
+    description: "Real-time collaborative editing with CRDT script sync, filesystem transfer, permissions, and live presence for multiple developers on the same project.",
+    link: "",
+  }, {
+    img: "",
+    title: "Autowork Testing",
+    description: "Integrated testing framework for unit, integration, and simulation tests to automate gameplay validation, regression testing, and project verification.",
+    link: "",
+  }, {
+    img: "",
+    title: "GOAP Framework",
+    description: "Native Goal-Oriented Action Planning for flexible, goal-driven AI. Agents inspect world state and plan action sequences toward objectives with inspectable behavior.",
+    link: "",
+  }, {
+    img: "",
+    title: "Tiled Importer",
+    description: "Native import of Tiled map editor files including tile layers, object groups, tilesets, and animated tiles for 2D level design.",
+    link: "",
+  }, {
+    img: "",
+    title: "POGR Analytics",
+    description: "Integrated POGR API for easily adding analytics to track gameplay metrics, player behavior, and performance data.",
+    link: "",
+  }, {
+    img: "",
+    title: "Luau Support (Experimental)",
+    description: "Experimental Luau scripting module for writing networking and server-side code directly in the engine, planned for scriptable game servers.",
+    link: "",
+  }, {
+    img: "",
+    title: "React Bridge",
+    description: "Native bridge for integrating Blazium web exports with React applications via postMessage for hybrid web experiences.",
     link: "",
   }]
 } as const;
 
 export const featureList: FeatureCategory[] = [
   base,
-  devtools,
-  contentcreation,
-  clientserver,
-  web,
+  platform,
+  data,
+  networking,
+  streaming,
+  tools,
 ] as const;

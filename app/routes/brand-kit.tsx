@@ -1,5 +1,5 @@
-import type { Route } from "./+types/press-kit";
-import style from "css/press-kit.module.css";
+import type { Route } from "./+types/brand-kit";
+import style from "css/brand-kit.module.css";
 import { MetaTags } from "comps/metatags";
 import { publicAsset } from "~/lib/publicAsset";
 
@@ -9,7 +9,7 @@ export default ({ }: Route.ComponentProps) => {
   return <>
     <MetaTags />
     <main className={style["main"]}>
-      <h1>press-kit</h1>
+      <h1>Brand Kit</h1>
       <section>
         <h2>Logo</h2>
         <div>

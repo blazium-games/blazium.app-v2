@@ -1,46 +1,44 @@
 .main {
   >h1 {
+    margin-top: var(--spacing-m);
     text-align: center;
-    font: var(--h2);
   }
 
   >p {
-    font-size: var(--font-s-h6);
+    font-size: var(--font-s-h5);
     text-align: center;
-    margin-top: var(--spacing-m);
   }
 
   >section {
-    margin-top: var(--spacing-2xl);
+    margin-top: var(--spacing-m);
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-s);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2xs);
   }
 }
 
 .devcard-article {
   display: flex;
-  background: linear-gradient(var(--color-bg-light), var(--color-bg));
-  padding: var(--spacing-s);
-  border-radius: var(--spacing-s);
-  border: 1px solid var(--color-bg-light);
-  gap: var(--spacing-m);
+  background-image: var(--card-bg);
+  padding: var(--spacing-xs);
+  border-radius: var(--card-border-radius);
+  border: var(--card-border);
+  border-left-color: var(--color-primary);
+  gap: var(--spacing-xs);
 
   >img {
     aspect-ratio: 1;
-    width: 100px;
-    border-radius: var(--spacing-xs);
+    height: var(--spacing-5xl);
+    border-radius: var(--spacing-3xs);
     background-color: var(--color-bg-dark);
-    border: 2px solid var(--color-bg-light);
+    border: var(--card-border);
   }
 
   h2 {
-    font: var(--h4);
+    font: var(--h5);
 
     &+span {
-      margin-top: var(--spacing-2xs);
       color: var(--color-text-muted);
-      font-size: var(--font-s-h6);
     }
   }
 
@@ -52,12 +50,12 @@
       margin-top: auto;
       display: flex;
       flex-wrap: wrap;
-      gap: var(--spacing-2xs);
+      gap: var(--spacing-3xs);
 
       span {
-        padding: 2px var(--spacing-xs);
-        border-radius: var(--spacing-xs);
-        border: 2px solid var(--color-bg-light);
+        padding-inline: var(--spacing-2xs);
+        border-radius: var(--spacing-2xs);
+        border: var(--card-border);
         background-color: var(--color-bg-dark);
 
         &:first-of-type {

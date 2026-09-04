@@ -1,21 +1,18 @@
 import { type RouteConfig, index, prefix, route, layout } from "@react-router/dev/routes";
 
 export default [
-  route("chat", "routes/discord-redirect.tsx"),
-
   layout("routes/layout.tsx", [
     index("routes/home.tsx"),
 
     route("features", "routes/features.tsx"),
-    route("download", "routes/download.tsx"), // redirect /downloads/* here
+    route("download", "routes/download.tsx"),
     route("sponsors", "routes/sponsors.tsx"),
-    route("developers", "routes/developers.tsx"), // redirect /meet-the-team here
+    route("developers", "routes/developers.tsx"),
     route("changelog", "routes/changelog.tsx"),
     route("from-godot", "routes/from-godot.tsx"),
-    route("privacy-policy", "routes/privacy-policy.tsx"),
-    route("press-kit", "routes/press-kit.tsx"),
-    route("blog", "routes/blog.tsx"),
-    route("articles/:slug", "routes/articles.tsx"),
+    route("brand-kit", "routes/brand-kit.tsx"),
+    route("news", "routes/news.tsx"),
+    route("news/:slug", "routes/article.tsx"),
 
     route("*", "routes/404.tsx"),
   ]),

@@ -1,5 +1,5 @@
-import type { Route } from "./+types/articles";
-import style from "css/articles.module.css";
+import type { Route } from "./+types/article";
+import style from "css/article.module.css";
 import { MetaTags } from "comps/metatags";
 import { marked } from "marked";
 import type { ArticleMetadata } from "~/types";

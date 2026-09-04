@@ -4,23 +4,28 @@
   gap: var(--spacing-m) var(--spacing-2xs);
   max-width: 900px;
 
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+  }
+
   h1 {
-    font: var(--h3);
     text-align: center;
     margin-top: var(--spacing-m);
     grid-area: auto / span 2;
   }
 
   h2 {
-    font: var(--h5);
+    font: var(--h4);
     color: var(--color-text-muted);
   }
 
   >section {
     background-color: var(--color-bg);
     padding: var(--spacing-xs);
-    border-radius: var(--spacing-2xs);
-    border: 1px solid var(--color-bg-light);
+    border-radius: var(--card-border-radius);
+    border: var(--card-border);
+    border-left-color: var(--color-primary);
   }
 }
 
@@ -37,7 +42,7 @@
     }
 
     small {
-      margin-top: var(--spacing-xs);
+      margin-top: var(--spacing-2xs);
       color: var(--color-text-muted);
       text-align: center;
     }
@@ -50,7 +55,7 @@
 
   >div+a {
     vertical-align: top;
-    margin-left: var(--spacing-s);
+    margin-left: var(--spacing-xs);
   }
 
   form {
@@ -81,8 +86,13 @@
     >fieldset:nth-of-type(2) {
       margin-top: var(--spacing-m);
       display: flex;
-      gap: var(--spacing-xs);
+      gap: var(--spacing-2xs);
       align-items: center;
+
+      @media (max-width: 700px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
       label {
         display: flex;
@@ -106,6 +116,10 @@
     gap: var(--spacing-s);
     color: var(--color-text-muted);
     align-items: center;
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 

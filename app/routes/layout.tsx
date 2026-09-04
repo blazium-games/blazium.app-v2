@@ -21,7 +21,7 @@ export const Header = () => {
           <AppNavLink to="/download">Download</AppNavLink>
           <AppNavLink to="/features">Features</AppNavLink>
           <AppNavLink to="/from-godot">From Godot</AppNavLink>
-          <AppNavLink to="/blog">Blog</AppNavLink>
+          <AppNavLink to="/news">News</AppNavLink>
         </div>
       </nav>
       <nav>
@@ -36,23 +36,22 @@ export const Footer = () => {
     <footer className={style["footer"]}>
       <nav>
         <div>
-          <h2>Get started</h2>
+          <h2>Get Started</h2>
           <AppLink to="/download">Download</AppLink>
           <AppLink to="/features">Features</AppLink>
           <AppLink to="/from-godot">From Godot</AppLink>
-          <AppLink to={links.documentation}>Documentation</AppLink>
           <AppLink to="/changelog">Changelog</AppLink>
         </div>
         <div>
           <h2>Resources</h2>
-          <AppLink to="/blog">Blog</AppLink>
-          <AppLink to="/privacy-policy">Privacy Policy</AppLink>
+          <AppLink to={links.documentation}>Documentation</AppLink>
+          <AppLink to="/news">News</AppLink>
           <AppLink to="/sponsors">Sponsors</AppLink>
           <AppLink to="/developers">Developers</AppLink>
-          <AppLink to="/press-kit">Press Kit</AppLink>
+          <AppLink to="/brand-kit">Brand Kit</AppLink>
         </div>
         <div>
-          <h2>Follow us</h2>
+          <h2>Follow Us</h2>
           <AppLink to="/chat">Discord</AppLink>
           <AppLink to={links.github}>GitHub</AppLink>
           <AppLink to={links.indiedb}>IndieDB</AppLink>
@@ -61,13 +60,11 @@ export const Footer = () => {
           <AppLink to={links.itchio}>itch.io</AppLink>
         </div>
       </nav>
-      <section>
         <small>
           {DEVENV ? "DEV" : GITHUB_PAGES ? "GH_PAGES" : "PROD"}
           {" | "}
-          &copy; MIT 2024-{new Date().getFullYear()} Blazium Games & contributors.
+          MIT 2024-{new Date().getFullYear()} Blazium Games & contributors.
         </small>
-      </section>
     </footer>
   )
 }

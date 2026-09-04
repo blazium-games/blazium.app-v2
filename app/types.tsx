@@ -76,6 +76,16 @@ export type DigitalStore = {
   icon: IconType,
 };
 
+export type ShowcaseInfo = {
+  video: string;
+  name: string;
+  credits: string[];
+  link?: {
+    url: string;
+    label: string;
+  };
+};
+
 export type FeatureData = {
   img: string,
   title: string,

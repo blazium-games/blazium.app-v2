@@ -100,7 +100,6 @@ function Timestamp({ timestamp }: { timestamp: string }) {
 }
 
 export default ({ loaderData }: Route.ComponentProps) => {
-  const formRef = useRef<HTMLFormElement>(null);
   const fetcher = useFetcher<typeof action>()
   const data = fetcher.data ?? loaderData;
 
@@ -109,7 +108,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
     <main className={style["main"]}>
       <h1>Download Blazium Game Engine</h1>
       <section className={style["download-section"]}>
-        <fetcher.Form ref={formRef}>
+        <fetcher.Form>
           <fieldset onChange={(e) => fetcher.submit(e.currentTarget.form, { method: "POST" })}>
             <label>
               <span>Release</span>
@@ -166,7 +165,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
             {data.size && <SizeSpan bytes={data.size} />} &ndash; {data.timestamp && <Timestamp timestamp={data.timestamp} />}
           </small>
         </div>
-        <AppLink to={`/changelog?buildtype=${data.buildType}&version=${data.version}`} className="button secondary">View Changelog</AppLink>
+        <AppLink to={`/changelog?v=${data.buildType}_${data.version}`} className="button secondary">View Changelog</AppLink>
         <div>
           <div>
             <h2>Export Templates</h2>
@@ -174,12 +173,12 @@ export default ({ loaderData }: Route.ComponentProps) => {
           </div>
           <ul>
             <li>
-              <Link to={`https://cdn.blazium.app/release/${data.version}/Blazium_v${data.version}_export_templates.tpz`} download>
+              <Link to={`https://cdn.blazium.app/${data.buildType}/${data.version}/Blazium_v${data.version}_export_templates.tpz`} download>
                 Get for {data.buildType} {data.version}
               </Link>
             </li>
             <li>
-              <Link to={`https://cdn.blazium.app/release/${data.version}/Blazium_v${data.version}_mono_export_templates.tpz`} download>
+              <Link to={`https://cdn.blazium.app/${data.buildType}/${data.version}/Blazium_v${data.version}_mono_export_templates.tpz`} download>
                 Get for {data.buildType} {data.version} .NET
               </Link>
             </li>

@@ -4,14 +4,15 @@
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
-  padding: var(--spacing-xl);
+  padding: var(--spacing-2xs);
   color: var(--color-text-muted);
+  border-bottom: 1px solid oklch(from var(--color-bg-light) l c h / 0.5);
 
   a[href*="#"] {
     position: fixed;
-    padding: var(--spacing-xs);
-    top: var(--spacing-s);
-    left: var(--spacing-s);
+    padding: var(--spacing-2xs);
+    top: var(--spacing-xs);
+    left: var(--spacing-xs);
     background-color: var(--color-bg-light);
     z-index: 1000;
     opacity: 0;
@@ -36,7 +37,7 @@
   nav:first-of-type>a:first-of-type {
     margin-right: var(--spacing-m);
     color: var(--color-text);
-    font: var(--h6);
+    font: var(--h5);
 
     img {
       vertical-align: bottom;
@@ -45,8 +46,8 @@
   }
 
   a[class] {
-    --padding: var(--spacing-s);
-    padding: var(--spacing-xs) var(--padding);
+    --padding: var(--spacing-xs);
+    padding: var(--padding);
     position: relative;
 
     &::after {
@@ -57,7 +58,7 @@
       margin-inline: auto;
       height: 2px;
       left: var(--padding);
-      bottom: var(--spacing-2xs);
+      bottom: var(--spacing-3xs);
       width: calc(100% - calc(2 * var(--padding)));
       transform: scaleX(0);
       transition: transform 0.1s;
@@ -104,10 +105,10 @@
     }
   }
 
-  section {
+  small {
     opacity: 0.5;
     width: fit-content;
-    padding: var(--spacing-2xs);
+    padding-inline: var(--spacing-3xs);
   }
 }
 
