@@ -1,23 +1,9 @@
+import { Link } from "react-router";
 import type { Route } from "./+types/features";
 import style from "css/features.module.css";
 import { MetaTags } from "~/components/metatags";
-import { AppLink } from "comps/AppLink";
-import { featureList } from "~/data/features";
+import { featuresList } from "~/data/features";
 import { publicAsset } from "~/lib/publicAsset";
-import { FaChevronCircleDown } from "react-icons/fa";
-
-function FeatureCard({ data }: { data: any }) {
-  return (
-    <article className={style["featurecard-article"]}>
-      <img src={publicAsset("images/GitHub.png")} alt={data.title} />
-      <div>
-        <h3>{data.title}</h3>
-        <p>{data.description}</p>
-        <AppLink to={data.link}>Learn More</AppLink>
-      </div>
-    </article>
-  )
-}
 
 export default ({ }: Route.ComponentProps) => {
   return <>
@@ -29,15 +15,31 @@ export default ({ }: Route.ComponentProps) => {
         gives you everything you need to start, ship, grow and stand out from
         the crowd.
       </p>
-      {featureList.map(category => (
-        <details>
-          <summary><FaChevronCircleDown /><h2>{category.title}</h2></summary>
-          <div>
-            {category.features.map(feature => (
-              <FeatureCard data={feature} />
-            ))}
-          </div>
-        </details>
+      <nav>
+        {Object.entries(featuresList).map(([title]) => (
+          <Link to={`#${title}`} key={title}>{title}</Link>
+        ))}
+      </nav>
+      {Object.entries(featuresList).map(([title, features]) => (
+        <section key={title} id={title}>
+          <aside>
+            <h2>{title}</h2>
+            <ul>
+              {features.map(feature => 
+                <li key={feature.title}>
+                  <Link to={`#${feature.title}`}>{feature.title}</Link>
+                </li>
+              )}
+            </ul>
+          </aside>
+          {features.map(feature => (
+            <section key={feature.title} id={feature.title}>
+              <h3>{feature.title}</h3>
+              <img src={publicAsset("/images/GitHub.png")} alt={feature.title} loading="lazy" />
+              <p>{feature.description}</p>
+            </section>
+          ))}
+        </section>
       ))}
     </main>
   </>

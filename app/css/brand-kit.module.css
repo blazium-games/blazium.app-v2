@@ -21,7 +21,6 @@
     img {
       border-radius: var(--card-border-radius);
       border: var(--card-border);
-      width: 100%;
       background-image: conic-gradient(
         var(--bg-1) 0deg 90deg,
         var(--bg-2) 90deg 180deg,

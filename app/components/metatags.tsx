@@ -1,3 +1,5 @@
+import { publicAsset } from "~/lib/publicAsset";
+
 type TagsData = {
   title?: string,
   description?: string,
@@ -8,9 +10,9 @@ type TagsData = {
 
 export const defaults: TagsData = {
   title: "Blazium Game Engine",
-  description: "Community-driven, powerful, and flexible. The stable Godot fork, with features that matter.",
-  keywords: "Blazium Engine, Godot Engine, Community-driven, Networking, game dev",
-  image: "",
+  description: "Blazium Engine is a free, open-source fork of Godot for building cross-platform 2D and 3D games and apps, with the tools, platform integrations, and improvements you need.",
+  keywords: "blazium, blazium engine, blazium games, godot, godot fork, game engine, open source game engine, oss, free game engine, mit license, gamedev, indie, indie game development, 2d, 3d, xr, cross platform, multiplayer, game services, networking, steam, luau, community driven, free and open source, game development tools, indie studio, blazium.app, godot alternative, open source gamedev, 2d game engine, 3d game engine",
+  image: publicAsset("/images/GitHub.png"),
   cardType: "summary_large_image",
 }
 

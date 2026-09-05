@@ -90,12 +90,6 @@ export type FeatureData = {
   img: string,
   title: string,
   description: string,
-  link: string,
-};
-
-export type FeatureCategory = {
-  title: string,
-  features: FeatureData[],
 };
 
 export type ArticleHost = {

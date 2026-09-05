@@ -16,17 +16,17 @@ export async function loader({ }: Route.LoaderArgs) {
   return index;
 }
 
-function ArticleCard({ data }: { data: ArticleIndexData }) {
+export function ArticleCard({ data }: { data: ArticleIndexData }) {
   return (
     <article className={style["article"]}>
-      <img src={data.cover} alt={data.slug} loading="lazy" />
-      <div>
-        <Link to={data.slug}><h2>{data.title}</h2></Link>
-        <p>{truncateText(data.description, 120)}</p>
-        <time dateTime={data.date}>{
-          new Date(data.date).toLocaleDateString("en-US", { dateStyle: "long" })
-        }</time>
-      </div>
+      <Link to={`/news/${data.slug}`}>
+        <img src={data.cover} alt={data.slug} loading="lazy" />
+      </Link>
+      <Link to={`/news/${data.slug}`}><h2>{data.title}</h2></Link>
+      <p>{truncateText(data.description, 128)}</p>
+      <time dateTime={data.date}>{
+        new Date(data.date).toLocaleDateString("en-US", { dateStyle: "long" })
+      }</time>
     </article>
   )
 }
@@ -41,14 +41,10 @@ export default ({ loaderData }: Route.ComponentProps) => {
     <MetaTags />
     <main className={style["main"]}>
       <h1>News</h1>
-      <nav>
-        <Link to="https://cdn.blazium.app/articles/rss.xml" className="button secondary">
-          <FaRss /> RSS
-        </Link>
-      </nav>
-      <section>
-        {loaderData?.items.map(entry => <ArticleCard key={entry.slug} data={entry} />)}
-      </section>
+      <Link to="https://cdn.blazium.app/articles/rss.xml" className="button secondary">
+        <FaRss /> RSS
+      </Link>
+      {loaderData?.items.map(entry => <ArticleCard key={entry.slug} data={entry} />)}
     </main>
   </>
 }

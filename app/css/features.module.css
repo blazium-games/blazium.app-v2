@@ -1,85 +1,32 @@
 .main {
-  width: 100%;
+  >section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    gap: var(--spacing-2xs);
 
-  h1 {
-    margin-top: var(--spacing-m);
-  }
+    ul {
+      text-wrap-mode: nowrap;
+    }
 
-  >p+details {
-    margin-top: var(--spacing-m);
-  }
-
-  >details {
-    margin-top: var(--spacing-2xs);
-    background-color: var(--color-bg);
-    border-radius: var(--card-border-radius);
-    border: var(--card-border);
-    border-left-color: var(--color-primary);
-
-    summary {
+    aside,
+    section {
+      background-image: var(--card-bg);
       padding: var(--spacing-xs);
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-xs);
-
-      svg {
-        font: var(--h5);
-        color: var(--color-text-muted);
-        transition: rotate 0.2s;
-      }
-
-      h2 {
-        font-size: var(--font-s-h5);
-      }
+      border: var(--card-border);
+      border-radius: var(--card-border-radius);
+      border-left-color: var(--color-accent);
     }
 
-    &[open]>summary>svg {
-      rotate: 180deg;
+    aside {
+      position: sticky;
+      top: var(--spacing-2xs);
+      align-self: self-start;
+      grid-row: span 8;
     }
 
-    >div {
-      display: grid;
-      gap: var(--spacing-2xs);
-      margin: var(--spacing-xs);
-      margin-top: 0;
+    section {
+      max-width: var(--max-readable-width);
     }
-  }
-}
-
-.featurecard-article {
-  background-image: var(--card-bg);
-  padding: var(--spacing-xs);
-  border-radius: var(--card-border-radius);
-  border: var(--card-border);
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: var(--spacing-xs);
-
-  img {
-    width: 100%;
-    border-radius: var(--spacing-3xs);
-    background-color: var(--color-bg-dark);
-    border: var(--card-border);
-    aspect-ratio: 16/9;
-    object-fit: contain;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    padding-block: var(--spacing-xs);
-  }
-
-  h3 {
-    font-size: var(--font-s-h5);
-  }
-
-  p {
-    color: var(--color-text-muted);
-    margin-top: var(--spacing-xs);
-  }
-
-  a {
-    margin-top: auto;
   }
 }

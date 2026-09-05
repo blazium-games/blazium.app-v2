@@ -33,7 +33,7 @@
     padding: var(--spacing-xs);
     border-radius: var(--card-border-radius);
     border: var(--card-border);
-    border-left-color: var(--color-primary);
+    border-left-color: var(--color-accent);
 
     >div {
       display: grid;
