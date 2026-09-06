@@ -11,7 +11,7 @@ export default ({ }: Route.ComponentProps) => {
     <main className={style["main"]}>
       <h1>Features</h1>
       <p>
-        From games to applications across PC, console and XR, Blazium Engine
+        From games to applications, Blazium Engine
         gives you everything you need to start, ship, grow and stand out from
         the crowd.
       </p>

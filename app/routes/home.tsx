@@ -33,7 +33,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
           </h1>
           <p>
             Blazium Engine is a free, open-source fork of Godot for building
-            cross-platform 2D and 3D games and apps, with the tools, platform
+            cross-platform 2D and 3D games and applications, with the tools, platform
             integrations, and improvements you need.
           </p>
           <nav>
@@ -70,14 +70,14 @@ export default ({ loaderData }: Route.ComponentProps) => {
           <span>Blazium Engine Features</span>
           <h2>Everything you need out of the box</h2>
           <p>
-            From games to applications across PC, console and XR, Blazium Engine
+            From games to applications, Blazium Engine
             gives you everything you need to start, ship, grow and stand out from
             the crowd. We develop Blazium Engine to help us with our games,
             and we want to help you with yours.
           </p>
           <Link to="/features" className="button">See all features</Link>
         </div>
-        <img src={publicAsset("/images/GitHub.png")} alt="" loading="lazy" />
+        <img src={publicAsset("/images/placeholder.webp")} alt="alt" loading="lazy" />
       </section>
     </main>
   </>

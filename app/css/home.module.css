@@ -91,4 +91,26 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-2xs);
   align-items: center;
+  text-wrap-style: balance;
+
+  span {
+    font: var(--h6);
+  }
+
+  h2 {
+    margin-top: var(--spacing-xs);
+  }
+
+  p {
+    margin-top: var(--spacing-m);
+  }
+
+  a {
+    margin-top: var(--spacing-xl);
+  }
+
+  img {
+    border: var(--card-border);
+    border-radius: var(--spacing-2xs);
+  }
 }

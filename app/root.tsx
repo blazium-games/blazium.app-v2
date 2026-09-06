@@ -17,7 +17,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="sshiiden" />
+        <meta name="author" content="Blazium Games" />
         <meta name="robots" content="index, follow" />
         <meta name="referrer" content="no-referrer-when-downgrade" />
         <meta name="application-name" content="Blazium Game Engine" />
@@ -27,7 +27,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
         <meta property="og:url" content={loaderData.url} />
         <meta name="twitter:url" content={loaderData.url} />
         <meta name="twitter:creator" content="@BlaziumGames" />
-        <meta name="theme-color" content="#773ac1" />
+        <meta name="theme-color" content="#231c37" />
         <link rel="icon" href={publicAsset("/favicon.ico")} type="image/x-icon" />
         <link rel="canonical" href={loaderData.url} />
         <Links />
