@@ -1,16 +1,25 @@
 .main {
   >section {
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-4xl);
   }
 }
 
 .above-the-fold {
   display: flex;
   align-items: center;
-  gap: var(--spacing-2xs);
+  gap: var(--spacing-2xl) var(--spacing-2xs);
 
-  >div {
+  @media (width<1100px) {
+    flex-direction: column;
+
+    video {
+      width: 100%;
+    }
+  }
+
+  >div:nth-of-type(1) {
     max-width: var(--max-readable-width);
+    text-wrap-style: balance;
 
     h1 {
       span {
@@ -27,14 +36,12 @@
     p {
       margin-top: var(--spacing-m);
       font-size: var(--font-s-h5);
-      text-wrap-style: balance;
     }
 
     nav {
       margin-top: var(--spacing-xl);
       display: flex;
       gap: var(--spacing-xs);
-      margin-left: 25%;
     }
   }
 
@@ -46,10 +53,11 @@
     border-left-color: var(--color-accent);
     font: var(--small);
     color: var(--color-text-muted);
+    max-width: 100%;
 
     video {
       display: block;
-      max-width: 640px;
+      max-width: 720px;
       border: var(--card-border);
       border-radius: var(--spacing-3xs);
     }
@@ -81,6 +89,14 @@
   gap: var(--spacing-2xs);
   align-items: center;
 
+  @media (width<900px) {
+    grid-template-columns: 1fr;
+
+    >a {
+      grid-row: 6;
+    }
+  }
+
   >a {
     justify-self: end;
   }
@@ -89,9 +105,13 @@
 .features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-2xs);
+  gap: var(--spacing-2xl) var(--spacing-2xs);
   align-items: center;
   text-wrap-style: balance;
+
+  @media (width<900px) {
+    grid-template-columns: 1fr;
+  }
 
   span {
     font: var(--h6);
@@ -112,5 +132,41 @@
   img {
     border: var(--card-border);
     border-radius: var(--spacing-2xs);
+  }
+}
+
+.get-involved {
+  p {
+    margin-top: var(--spacing-xs);
+  }
+
+  ul {
+    margin-top: var(--spacing-m);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2xs);
+    list-style: none;
+
+    @media (width<900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  li {
+    background-image: var(--card-bg);
+    border: var(--card-border);
+    border-radius: var(--card-border-radius);
+    border-left-color: var(--color-accent);
+    padding: var(--spacing-xs);
+    display: grid;
+    align-items: center;
+
+    p, a {
+      margin-top: var(--spacing-xs);
+    }
+  }
+
+  svg {
+    alignment-baseline: central;
   }
 }

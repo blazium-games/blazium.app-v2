@@ -7,6 +7,9 @@ import { showcases } from "~/data/showcases";
 import { ArticleCard } from "./news";
 import { publicAsset } from "~/lib/publicAsset";
 import type { ArticlesIndex } from "~/types";
+import { SiReadthedocs } from "react-icons/si";
+import { IoLogoDiscord } from "react-icons/io5";
+import { FaSquareGithub } from "react-icons/fa6";
 
 export async function loader({ }: Route.LoaderArgs) {
   const showcase = showcases[Math.floor(Math.random() * showcases.length)];
@@ -79,6 +82,30 @@ export default ({ loaderData }: Route.ComponentProps) => {
         </div>
         <img src={publicAsset("/images/placeholder.webp")} alt="alt" loading="lazy" />
       </section>
-    </main>
+      <section className={style["get-involved"]}>
+        <h2>Get Involved</h2>
+        <p>
+          Help shape the future of Blazium.<br />
+          Whether by contributing code, improving the docs, or joining the community.
+        </p>
+        <ul>
+          <li>
+            <h3><SiReadthedocs /> Documentation</h3>
+            <p>Official documentation, tutorials, and class reference for Blazium Engine.</p>
+            <Link to="https://docs.blazium.app" className="button">Read the Docs</Link>
+          </li>
+          <li>
+            <h3><FaSquareGithub /> GitHub</h3>
+            <p>Report bugs, submit pull requests, or explore the source code.</p>
+            <Link to="https://github.com/blazium-games/blazium" className="button">View on GitHub</Link>
+          </li>
+          <li>
+            <h3><IoLogoDiscord /> Discord</h3>
+            <p>Join the community to ask questions, share projects, get help, and stay updated.</p>
+            <Link to="https://blazium.app/chat" className="button">Join Discord</Link>
+          </li>
+        </ul>
+      </section>
+    </main >
   </>
 }

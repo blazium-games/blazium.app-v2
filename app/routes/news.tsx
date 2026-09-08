@@ -23,7 +23,7 @@ export function ArticleCard({ data }: { data: ArticleIndexData }) {
         <img src={data.cover} alt={data.slug} loading="lazy" />
       </Link>
       <Link to={`/news/${data.slug}`}><h2>{data.title}</h2></Link>
-      <p>{truncateText(data.description, 128)}</p>
+      <p>{truncateText(data.description, 120)}</p>
       <time dateTime={data.date}>{
         new Date(data.date).toLocaleDateString("en-US", { dateStyle: "long" })
       }</time>

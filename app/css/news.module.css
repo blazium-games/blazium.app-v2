@@ -9,7 +9,9 @@
   }
 
   @media (max-width: 900px) {
-    grid-template-columns: 1fr;
+    .article {
+      grid-column: span 2;
+    }
   }
 }
 
@@ -24,6 +26,10 @@
   grid-template-columns: 3fr 4fr;
   grid-template-rows: auto 1fr auto;
   gap: var(--spacing-3xs) var(--spacing-xs);
+
+  @media (width<480px) {
+    grid-template-columns: 1fr;
+  }
 
   h2 {
     font: var(--h6);

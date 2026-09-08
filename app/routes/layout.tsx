@@ -5,6 +5,7 @@ import { AppLink, AppNavLink } from "comps/AppLink";
 import { links } from "~/data/links";
 import { publicAsset } from "~/lib/publicAsset";
 import { DEVENV, GITHUB_PAGES } from "~/env";
+import { IoMenu, IoClose } from "react-icons/io5";
 
 const logoSrc = publicAsset("images/Brand Kit/Logo/SVG/Blazium_Logo.svg");
 
@@ -27,6 +28,35 @@ export const Header = () => {
       <nav>
         <AppLink to={links.documentation}>Documentation</AppLink>
       </nav>
+      <button className="secondary" popoverTarget="mobile-menu" popoverTargetAction="show">
+        <IoMenu />
+      </button>
+      <dialog id="mobile-menu" popover="manual">
+        <button className="secondary" popoverTarget="mobile-menu" popoverTargetAction="hide">
+          <IoClose />
+        </button>
+        <nav>
+          <AppLink to="/">
+            <img src={logoSrc} alt="Blazium Logo" height={24} width={24} />
+            <span>Blazium</span>
+          </AppLink>
+          <hr />
+          <AppNavLink to="/download">Download</AppNavLink>
+          <AppNavLink to="/features">Features</AppNavLink>
+          <AppNavLink to="/from-godot">From Godot</AppNavLink>
+          <AppNavLink to="/news">News</AppNavLink>
+        </nav>
+        <hr />
+        <nav>
+          <span>Learn More</span>
+          <AppLink to={links.documentation}>Documentation</AppLink>
+          <AppLink to="/chat">Discord</AppLink>
+          <AppLink to={links.twitter}>X/Twitter</AppLink>
+          <AppLink to={links.github}>GitHub</AppLink>
+          <AppLink to="/developers">Developers</AppLink>
+          <AppLink to="/changelog">Changelog</AppLink>
+        </nav>
+      </dialog>
     </header>
   )
 }
@@ -60,11 +90,11 @@ export const Footer = () => {
           <AppLink to={links.itchio}>itch.io</AppLink>
         </div>
       </nav>
-        <small>
-          {DEVENV ? "DEV" : GITHUB_PAGES ? "GH_PAGES" : "PROD"}
-          {" | "}
-          MIT 2024-{new Date().getFullYear()} Blazium Games & contributors.
-        </small>
+      <small>
+        {DEVENV ? "DEV" : GITHUB_PAGES ? "GH_PAGES" : "PROD"}
+        {" | "}
+        MIT 2024-{new Date().getFullYear()} Blazium Games & contributors.
+      </small>
     </footer>
   )
 }
