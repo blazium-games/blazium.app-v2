@@ -60,7 +60,8 @@ export type DevRoles = (
   | "Community"
   | "3D Artist"
   | "Music Producer"
-  | "Business"
+  | "Business Management"
+  | "Product Management"
 );
 
 export type Developer = {

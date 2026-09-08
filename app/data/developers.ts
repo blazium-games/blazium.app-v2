@@ -3,7 +3,7 @@ import type { Developer } from "~/types";
 export const developers: Developer[] = [{
   name: "Connor Elison",
   image: "https://pbs.twimg.com/profile_images/1608275226768572416/f3otNXw5_400x400.jpg",
-  roles: ["Business"],
+  roles: ["Business Management"],
 }, {
   name: "Randolph William Aarseth II",
   altName: "Bioblaze Payne",
@@ -26,19 +26,37 @@ export const developers: Developer[] = [{
   name: "Nicholas Santos Shiden",
   altName: "sshiiden",
   image: "https://github.com/sshiiden.png?size=128",
-  roles: ["Front-End", "Engine Dev", "Game Dev"],
+  roles: ["Front-End", "Engine Dev"],
 }, {
   name: "RandomOfNoWhere",
+  image: "https://github.com/RandomOfNoWhere.png?size=128",
   roles: ["Game Dev"],
 }, {
   name: "TheKingScott",
-  roles: ["Game Dev"],
+  image: "https://github.com/TheKingScott.png?size=128",
+  roles: ["Engine Dev", "Game Dev"],
 }, {
   name: "Adaro",
   roles: ["3D Artist"],
 }, {
+  name: "Nock",
+  image: "https://github.com/ncondatore.png?size=128",
+  roles: ["Product Management"],
+}, {
+  name: "JGascart",
+  image: "https://cdn.discordapp.com/avatars/1266813202654564357/ed2be27023e176ba657b5003b0f4e8b6.png?size=128",
+  roles: ["3D Artist", "Game Dev"],
+}, {
+  name: "Shaggy",
+  image: "https://cdn.discordapp.com/avatars/351019417834094592/011a84c3d8d62640dcdfec81a35b84db.png?size=128",
+  roles: ["Engine Dev", "Game Dev"],
+}, {
   name: "MeGustaChu",
   roles: ["Music Producer"],
+}, {
+  name: "TamashiiDev",
+  image: "https://cdn.discordapp.com/avatars/1036040605127675984/9afd82affed8b7309efb04688dc47577.png?size=128",
+  roles: ["Game Dev"],
 }, {
   name: "Flare199",
   image: "https://github.com/flare199.png?size=128",
@@ -47,7 +65,4 @@ export const developers: Developer[] = [{
   name: "Reisyukaku",
   image: "https://github.com/Reisyukaku.png?size=128",
   roles: ["Engine Dev"],
-}, {
-  name: "TamashiiDev",
-  roles: ["Game Dev"],
 }] as const;
