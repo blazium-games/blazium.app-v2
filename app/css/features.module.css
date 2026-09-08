@@ -4,29 +4,40 @@
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
     gap: var(--spacing-2xs);
+    margin-top: var(--spacing-2xl);
+    scroll-margin-top: var(--spacing-4xl);
 
     ul {
       text-wrap-mode: nowrap;
     }
 
     aside,
-    section {
+    article {
+      scroll-margin-top: var(--spacing-4xl);
       background-image: var(--card-bg);
       padding: var(--spacing-xs);
       border: var(--card-border);
       border-radius: var(--card-border-radius);
       border-left-color: var(--color-accent);
+
+      img {
+        border: var(--card-border);
+        border-radius: var(--spacing-3xs);
+      }
     }
 
     aside {
       position: sticky;
-      top: var(--spacing-2xs);
+      top: var(--spacing-4xl);
       align-self: self-start;
-      grid-row: span 8;
     }
 
-    section {
+    article {
       max-width: var(--max-readable-width);
+
+      &+article {
+        margin-top: var(--spacing-2xs);
+      }
     }
   }
 }

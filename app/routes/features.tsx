@@ -17,7 +17,7 @@ export default ({ }: Route.ComponentProps) => {
       </p>
       <nav>
         {Object.entries(featuresList).map(([title]) => (
-          <Link to={`#${title}`} key={title}>{title}</Link>
+          <Link to={`#${title}`} key={title} className="button secondary">{title}</Link>
         ))}
       </nav>
       {Object.entries(featuresList).map(([title, features]) => (
@@ -25,20 +25,22 @@ export default ({ }: Route.ComponentProps) => {
           <aside>
             <h2>{title}</h2>
             <ul>
-              {features.map(feature => 
+              {features.map(feature =>
                 <li key={feature.title}>
                   <Link to={`#${feature.title}`}>{feature.title}</Link>
                 </li>
               )}
             </ul>
           </aside>
-          {features.map(feature => (
-            <section key={feature.title} id={feature.title}>
-              <h3>{feature.title}</h3>
-              <img src={publicAsset("/images/GitHub.png")} alt={feature.title} loading="lazy" />
-              <p>{feature.description}</p>
-            </section>
-          ))}
+          <div>
+            {features.map(feature => (
+              <article key={feature.title} id={feature.title}>
+                <h3>{feature.title}</h3>
+                <img src={feature.img || publicAsset("/images/GitHub.png")} alt={feature.title} loading="lazy" />
+                <p>{feature.description}</p>
+              </article>
+            ))}
+          </div>
         </section>
       ))}
     </main>
