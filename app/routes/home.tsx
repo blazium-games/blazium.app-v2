@@ -53,6 +53,8 @@ export default ({ loaderData }: Route.ComponentProps) => {
             disablePictureInPicture
             playsInline
             id="video-showcase"
+            width={640}
+            height={360}
           />
           <div>
             <label htmlFor="video-showcase">
@@ -90,14 +92,14 @@ export default ({ loaderData }: Route.ComponentProps) => {
         </p>
         <ul>
           <li>
-            <h3><SiReadthedocs /> Documentation</h3>
-            <p>Official documentation, tutorials, and class reference for Blazium Engine.</p>
-            <Link to="https://docs.blazium.app" className="button">Read the Docs</Link>
-          </li>
-          <li>
             <h3><FaSquareGithub /> GitHub</h3>
             <p>Report bugs, submit pull requests, or explore the source code.</p>
             <Link to="https://github.com/blazium-games/blazium" className="button">View on GitHub</Link>
+          </li>
+          <li>
+            <h3><SiReadthedocs /> Documentation</h3>
+            <p>Official documentation, tutorials, and class reference for Blazium Engine.</p>
+            <Link to="https://docs.blazium.app" className="button">Read the Docs</Link>
           </li>
           <li>
             <h3><IoLogoDiscord /> Discord</h3>

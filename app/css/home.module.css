@@ -57,7 +57,8 @@
 
     video {
       display: block;
-      max-width: 720px;
+      max-width: 640px;
+      height: auto;
       border: var(--card-border);
       border-radius: var(--spacing-3xs);
     }
