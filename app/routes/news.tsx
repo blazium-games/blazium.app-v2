@@ -38,7 +38,10 @@ function truncateText(text: string, max: number): string {
 
 export default ({ loaderData }: Route.ComponentProps) => {
   return <>
-    <MetaTags />
+    <MetaTags
+      title="News"
+      description={`${loaderData?.count} news articles about Blaizum Games.`}
+    />
     <main className={style["main"]}>
       <h1>News</h1>
       <Link to="https://cdn.blazium.app/articles/rss.xml" className="button secondary">

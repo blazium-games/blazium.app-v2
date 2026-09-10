@@ -95,7 +95,10 @@ function Commit({ data }: { data: any }) {
 
 export default ({ loaderData }: Route.ComponentProps) => {
   return <>
-    <MetaTags />
+    <MetaTags
+      title={`${loaderData.info.buildType} ${loaderData.info.version} changelog`}
+      description={`${loaderData.info.totalCommits} commits ${loaderData.info.totalContributors} contributors.`}
+    />
     <main className={style["main"]}>
       <h1>Blazium Engine Changelog</h1>
       <section>

@@ -27,7 +27,10 @@ function DevCard({ data }: { data: Developer }) {
 
 export default ({ }: Route.ComponentProps) => {
   return <>
-    <MetaTags />
+    <MetaTags
+      title="Blazium Games Team"
+      description="We are a group of passionate programmers and artists driven by our love of videogames."
+    />
     <main className={style["main"]}>
       <h1>Blazium Games</h1>
       <p>We are a group of passionate programmers and artists driven by our love of videogames.</p>

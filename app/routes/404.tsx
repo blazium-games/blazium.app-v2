@@ -18,7 +18,7 @@ const redirectMiddleware: Route.MiddlewareFunction = async ({ params }) => {
       return redirect("/", 308);
     case "download/prebuilt-binaries":
     case "download/digital-store":
-      return redirect("/download", 308);
+      return redirect("/download/editor", 308);
     case "games":
     case "games/hangman":
     case "privacy-policy":

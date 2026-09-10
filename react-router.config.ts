@@ -10,6 +10,7 @@ const pagesPrerender = [
   "/",
   "/features",
   "/download",
+  "/download/editor",
   "/sponsors",
   "/developers",
   "/changelog",

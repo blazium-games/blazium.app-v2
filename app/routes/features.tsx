@@ -7,7 +7,10 @@ import { publicAsset } from "~/lib/publicAsset";
 
 export default ({ }: Route.ComponentProps) => {
   return <>
-    <MetaTags />
+    <MetaTags
+      title="Features"
+      description="From games to applications, Blazium Engine gives you everything you need to start, ship, grow and stand out from the crowd."
+    />
     <main className={style["main"]}>
       <hgroup>
         <h1>Features</h1>

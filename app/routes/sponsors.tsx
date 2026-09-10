@@ -7,7 +7,9 @@ import { publicAsset } from "~/lib/publicAsset";
 
 export default ({ }: Route.ComponentProps) => {
   return <>
-    <MetaTags />
+    <MetaTags
+      title="Sponsors of Blazium Games"
+    />
     <main className={style["main"]}>
       <h1>Sponsors of Blazium Games</h1>
       <section>

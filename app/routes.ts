@@ -6,6 +6,7 @@ export default [
 
     route("features", "routes/features.tsx"),
     route("download", "routes/download.tsx"),
+    route("download/editor", "routes/download-editor.tsx"),
     route("sponsors", "routes/sponsors.tsx"),
     route("developers", "routes/developers.tsx"),
     route("changelog", "routes/changelog.tsx"),

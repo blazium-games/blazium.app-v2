@@ -9,7 +9,7 @@ html {
   --color-text: oklch(0.95 0.05 var(--hue));
   --color-text-muted: oklch(from var(--color-text) l c h / 0.8);
 
-  --color-accent: oklch(0.50 0.20 300);
+  --color-accent: oklch(0.50 0.25 300);
 
   --color-danger: oklch(0.7 0.18 30);
   --color-warning: oklch(0.7 0.18 100);
