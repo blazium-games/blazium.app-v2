@@ -1,13 +1,14 @@
 .main {
-  >section {
-    margin-top: var(--spacing-4xl);
-  }
 }
 
 .above-the-fold {
   display: flex;
   align-items: center;
   gap: var(--spacing-2xl) var(--spacing-2xs);
+
+  &~section {
+    margin-top: var(--spacing-4xl);
+  }
 
   @media (width<1100px) {
     flex-direction: column;

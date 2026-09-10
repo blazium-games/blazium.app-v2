@@ -1,15 +1,33 @@
 .main {
-  >section {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto;
-    gap: var(--spacing-2xs);
-    margin-top: var(--spacing-2xl);
-    scroll-margin-top: var(--spacing-4xl);
+  img {
+    border: var(--card-border);
+    border-radius: var(--spacing-3xs);
+  }
 
-    ul {
-      text-wrap-mode: nowrap;
+  hgroup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: var(--spacing-2xs);
+
+    h1 {
+      align-self: self-end;
     }
+
+    img {
+      grid-column: 2;
+      grid-row: 1 / -1;
+    }
+  }
+
+  >section {
+    margin-top: var(--spacing-4xl);
+  }
+
+  section {
+    display: flex;
+    gap: var(--spacing-2xs);
+    scroll-margin-top: var(--spacing-4xl);
 
     aside,
     article {
@@ -19,17 +37,30 @@
       border: var(--card-border);
       border-radius: var(--card-border-radius);
       border-left-color: var(--color-accent);
-
-      img {
-        border: var(--card-border);
-        border-radius: var(--spacing-3xs);
-      }
     }
 
     aside {
+      width: fit-content;
       position: sticky;
       top: var(--spacing-4xl);
       align-self: self-start;
+
+      h2,
+      span {
+        font: var(--h4);
+      }
+
+      nav {
+        margin-top: var(--spacing-2xs);
+        text-wrap-mode: nowrap;
+        display: grid;
+      }
+
+      &+div section+section {
+        margin-top: var(--spacing-xs);
+        padding-top: var(--spacing-xs);
+        border-top: 1px solid var(--color-bg);
+      }
     }
 
     article {

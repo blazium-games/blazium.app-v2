@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
+  margin-bottom: var(--spacing-2xl);
   padding: var(--spacing-2xs);
   color: var(--color-text-muted);
   border-bottom: 1px solid oklch(from var(--color-bg-light) l c h / 0.5);
@@ -128,7 +129,7 @@
 .footer {
   margin-top: auto;
   color: var(--color-text-muted);
-  padding-top: var(--spacing-5xl);
+  padding-top: var(--spacing-4xl);
 
   h2 {
     font: var(--h6);

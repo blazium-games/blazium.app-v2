@@ -9,40 +9,47 @@ export default ({ }: Route.ComponentProps) => {
   return <>
     <MetaTags />
     <main className={style["main"]}>
-      <h1>Features</h1>
-      <p>
-        From games to applications, Blazium Engine
-        gives you everything you need to start, ship, grow and stand out from
-        the crowd.
-      </p>
-      <nav>
-        {Object.entries(featuresList).map(([title]) => (
-          <Link to={`#${title}`} key={title} className="button secondary">{title}</Link>
-        ))}
-      </nav>
-      {Object.entries(featuresList).map(([title, features]) => (
-        <section key={title} id={title}>
-          <aside>
-            <h2>{title}</h2>
-            <ul>
-              {features.map(feature =>
-                <li key={feature.title}>
-                  <Link to={`#${feature.title}`}>{feature.title}</Link>
-                </li>
-              )}
-            </ul>
-          </aside>
-          <div>
-            {features.map(feature => (
-              <article key={feature.title} id={feature.title}>
-                <h3>{feature.title}</h3>
-                <img src={feature.img || publicAsset("/images/GitHub.png")} alt={feature.title} loading="lazy" />
-                <p>{feature.description}</p>
-              </article>
+      <hgroup>
+        <h1>Features</h1>
+        <p>
+          From games to applications, Blazium Engine gives you everything
+          you need to start, ship, grow and stand out from the crowd.
+        </p>
+        <img src={publicAsset("/images/placeholder.webp")} alt="" />
+      </hgroup>
+      <section>
+        <aside>
+          <span>Features</span>
+          <nav>
+            {Object.entries(featuresList).map(([title]) => (
+              <Link to={`#${title}`} key={title}>{title}</Link>
             ))}
-          </div>
-        </section>
-      ))}
+          </nav>
+        </aside>
+        <div>
+          {Object.entries(featuresList).map(([title, features]) => (
+            <section key={title} id={title}>
+              <div>
+                {features.map(feature => (
+                  <article key={feature.title} id={feature.title}>
+                    <h3>{feature.title}</h3>
+                    <img src={feature.img || publicAsset("/images/GitHub.png")} alt={feature.title} loading="lazy" />
+                    <p>{feature.description}</p>
+                  </article>
+                ))}
+              </div>
+              <aside>
+                <h2>{title}</h2>
+                <nav>
+                  {features.map(feature =>
+                    <Link to={`#${feature.title}`}>{feature.title}</Link>
+                  )}
+                </nav>
+              </aside>
+            </section>
+          ))}
+        </div>
+      </section>
     </main>
   </>
 }
