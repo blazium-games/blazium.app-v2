@@ -2,7 +2,6 @@ import type { Route } from "./+types/404";
 import style from "css/404.module.css";
 import { MetaTags } from "comps/metatags";
 import { Link } from "react-router";
-import { AppLink } from "comps/AppLink";
 import { links } from "~/data/links";
 import { redirect } from "react-router";
 
@@ -44,10 +43,10 @@ export default ({ }: Route.ComponentProps) => {
     <main className={style["main"]}>
       <h1>404 | Page Not Found</h1>
       <ul>
-        <li><AppLink to="/">Home</AppLink></li>
-        <li><AppLink to="/download">Download</AppLink></li>
-        <li><AppLink to="/features">Features</AppLink></li>
-        <li><AppLink to={links.documentation}>Documentation</AppLink></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/download">Download</Link></li>
+        <li><Link to="/features">Features</Link></li>
+        <li><Link to={links.documentation}>Documentation</Link></li>
       </ul>
       <p>
         Found an issue with the website?

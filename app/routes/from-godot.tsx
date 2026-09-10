@@ -1,7 +1,7 @@
 import type { Route } from "./+types/from-godot";
 import style from "css/from-godot.module.css";
 import { MetaTags } from "comps/metatags";
-import { AppLink } from "comps/AppLink";
+import { Link } from "react-router";
 
 export default ({ }: Route.ComponentProps) => {
   return <>
@@ -11,6 +11,7 @@ export default ({ }: Route.ComponentProps) => {
         <h1>From Godot to Blazium</h1>
         <p>
           Learn the differences of the fork and how to migrate your projects.
+          38 custom modules
         </p>
       </section>
       <section>
@@ -24,7 +25,7 @@ export default ({ }: Route.ComponentProps) => {
       </section>
       <section>
         <h2>call to action</h2>
-        <AppLink to="/download">Get Blazium Engine</AppLink>
+        <Link to="/download">Get Blazium Engine</Link>
       </section>
     </main>
   </>

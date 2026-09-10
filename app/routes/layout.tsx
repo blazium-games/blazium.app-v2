@@ -1,32 +1,31 @@
 import type { Route } from "./+types/layout";
 import style from "css/layout.module.css";
-import { Outlet } from "react-router";
-import { AppLink, AppNavLink } from "comps/AppLink";
+import { Outlet, Link, NavLink } from "react-router";
 import { links } from "~/data/links";
-import { publicAsset } from "~/lib/publicAsset";
 import { DEVENV, GITHUB_PAGES } from "~/env";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { publicAsset } from "~/lib/publicAsset";
 
-const logoSrc = publicAsset("images/Brand Kit/Logo/SVG/Blazium_Logo.svg");
+const logoSrc = publicAsset("/images/Brand Kit/Logo/SVG/Blazium_Logo.svg");
 
 export const Header = () => {
   return (
     <header className={style["header"]}>
-      <AppLink to="#main-content" reloadDocument>Skip to main content</AppLink>
+      <Link to="#main-content" reloadDocument>Skip to main content</Link>
       <nav>
-        <AppLink to="/">
+        <Link to="/">
           <img src={logoSrc} alt="Blazium Logo" height={24} width={24} />
           <span>Blazium</span>
-        </AppLink>
+        </Link>
         <div>
-          <AppNavLink to="/download">Download</AppNavLink>
-          <AppNavLink to="/features">Features</AppNavLink>
-          <AppNavLink to="/from-godot">From Godot</AppNavLink>
-          <AppNavLink to="/news">News</AppNavLink>
+          <NavLink to="/download">Download</NavLink>
+          <NavLink to="/features">Features</NavLink>
+          <NavLink to="/from-godot">From Godot</NavLink>
+          <NavLink to="/news">News</NavLink>
         </div>
       </nav>
       <nav>
-        <AppLink to={links.documentation}>Documentation</AppLink>
+        <Link to={links.documentation}>Documentation</Link>
       </nav>
       <button className="secondary" popoverTarget="mobile-menu" popoverTargetAction="show">
         <IoMenu />
@@ -36,25 +35,25 @@ export const Header = () => {
           <IoClose />
         </button>
         <nav>
-          <AppLink to="/">
+          <Link to="/">
             <img src={logoSrc} alt="Blazium Logo" height={24} width={24} />
             <span>Blazium</span>
-          </AppLink>
+          </Link>
           <hr />
-          <AppNavLink to="/download">Download</AppNavLink>
-          <AppNavLink to="/features">Features</AppNavLink>
-          <AppNavLink to="/from-godot">From Godot</AppNavLink>
-          <AppNavLink to="/news">News</AppNavLink>
+          <NavLink to="/download">Download</NavLink>
+          <NavLink to="/features">Features</NavLink>
+          <NavLink to="/from-godot">From Godot</NavLink>
+          <NavLink to="/news">News</NavLink>
         </nav>
         <hr />
         <nav>
           <span>Learn More</span>
-          <AppLink to={links.documentation}>Documentation</AppLink>
-          <AppLink to="/chat">Discord</AppLink>
-          <AppLink to={links.twitter}>X/Twitter</AppLink>
-          <AppLink to={links.github}>GitHub</AppLink>
-          <AppLink to="/developers">Developers</AppLink>
-          <AppLink to="/changelog">Changelog</AppLink>
+          <Link to={links.documentation}>Documentation</Link>
+          <Link to="/chat">Discord</Link>
+          <Link to={links.twitter}>X/Twitter</Link>
+          <Link to={links.github}>GitHub</Link>
+          <Link to="/developers">Developers</Link>
+          <Link to="/changelog">Changelog</Link>
         </nav>
       </dialog>
     </header>
@@ -67,27 +66,27 @@ export const Footer = () => {
       <nav>
         <div>
           <h2>Get Started</h2>
-          <AppLink to="/download">Download</AppLink>
-          <AppLink to="/features">Features</AppLink>
-          <AppLink to="/from-godot">From Godot</AppLink>
-          <AppLink to="/changelog">Changelog</AppLink>
+          <Link to="/download">Download</Link>
+          <Link to="/features">Features</Link>
+          <Link to="/from-godot">From Godot</Link>
+          <Link to="/changelog">Changelog</Link>
         </div>
         <div>
           <h2>Resources</h2>
-          <AppLink to={links.documentation}>Documentation</AppLink>
-          <AppLink to="/news">News</AppLink>
-          <AppLink to="/sponsors">Sponsors</AppLink>
-          <AppLink to="/developers">Developers</AppLink>
-          <AppLink to="/brand-kit">Brand Kit</AppLink>
+          <Link to={links.documentation}>Documentation</Link>
+          <Link to="/news">News</Link>
+          <Link to="/sponsors">Sponsors</Link>
+          <Link to="/developers">Developers</Link>
+          <Link to="/brand-kit">Brand Kit</Link>
         </div>
         <div>
           <h2>Follow Us</h2>
-          <AppLink to="/chat">Discord</AppLink>
-          <AppLink to={links.github}>GitHub</AppLink>
-          <AppLink to={links.indiedb}>IndieDB</AppLink>
-          <AppLink to={links.twitter}>X/Twitter</AppLink>
-          <AppLink to={links.youtube}>YouTube</AppLink>
-          <AppLink to={links.itchio}>itch.io</AppLink>
+          <Link to="/chat">Discord</Link>
+          <Link to={links.github}>GitHub</Link>
+          <Link to={links.indiedb}>IndieDB</Link>
+          <Link to={links.twitter}>X/Twitter</Link>
+          <Link to={links.youtube}>YouTube</Link>
+          <Link to={links.itchio}>itch.io</Link>
         </div>
       </nav>
       <small>

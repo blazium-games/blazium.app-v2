@@ -3,7 +3,7 @@ import style from "css/brand-kit.module.css";
 import { MetaTags } from "comps/metatags";
 import { publicAsset } from "~/lib/publicAsset";
 
-const path = publicAsset("images/Brand Kit");
+const path = publicAsset("/images/Brand Kit");
 
 export default ({ }: Route.ComponentProps) => {
   return <>

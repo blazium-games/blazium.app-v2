@@ -1,7 +1,6 @@
 import type { Route } from "./+types/home";
 import style from "css/home.module.css";
 import { MetaTags } from "comps/metatags";
-import { AppLink } from "comps/AppLink";
 import { Link } from "react-router";
 import { showcases } from "~/data/showcases";
 import { ArticleCard } from "./news";
@@ -40,8 +39,8 @@ export default ({ loaderData }: Route.ComponentProps) => {
             integrations, and improvements you need.
           </p>
           <nav>
-            <AppLink to="/download" className="button">Download</AppLink>
-            <AppLink to="/features" className="button secondary">Features</AppLink>
+            <Link to="/download" className="button">Download</Link>
+            <Link to="/features" className="button secondary">Features</Link>
           </nav>
         </div>
         <div>

@@ -50,7 +50,7 @@ function moveBuildEntry(src: string, dest: string) {
 export default {
   ssr: true,
   basename: isPagesPreview ? pagesBase : "/",
-  routeDiscovery: isPagesPreview ? { mode: "initial" } : undefined,
+  routeDiscovery: { mode: isPagesPreview ? "initial" : "lazy" },
   async prerender() {
     let articlesSlugs = await getArticlesSlugs();
     return [

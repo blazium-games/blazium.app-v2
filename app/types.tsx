@@ -87,6 +87,12 @@ export type ShowcaseInfo = {
   };
 };
 
+export type Sponsor = {
+  name: string,
+  url: string,
+  img: string,
+};
+
 export type FeatureData = {
   img: string,
   title: string,

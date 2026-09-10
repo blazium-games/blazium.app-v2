@@ -21,12 +21,9 @@ jobs:
         with:
           cache: npm
       - run: npm ci
-      - run: npm run fetch-data
-      - run: npm run build:pages
+      - run: npm run build
         env:
           GITHUB_PAGES: "true"
-      - name: Remove .data and .js files
-        run: rm -rfv *.data *.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
