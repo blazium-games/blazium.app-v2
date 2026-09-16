@@ -27,7 +27,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
         <meta property="og:url" content={loaderData.url} />
         <meta name="twitter:url" content={loaderData.url} />
         <meta name="twitter:creator" content="@BlaziumGames" />
-        <meta name="theme-color" content="#231c37" />
+        <meta name="theme-color" content="#140c25" />
         <link rel="icon" href={publicAsset("/favicon.ico")} type="image/x-icon" />
         <link rel="canonical" href={loaderData.url} />
         <Links />

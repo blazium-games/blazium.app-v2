@@ -2,9 +2,9 @@
 
 html {
   --hue: 295;
-  --color-bg-dark: oklch(0.25 0.05 var(--hue));
+  --color-bg-dark: oklch(0.18 0.05 var(--hue));
   --color-bg: oklch(0.28 0.05 var(--hue));
-  --color-bg-light: oklch(0.32 0.05 var(--hue));
+  --color-bg-light: oklch(0.33 0.05 var(--hue));
 
   --color-text: oklch(0.95 0.05 var(--hue));
   --color-text-muted: oklch(from var(--color-text) l c h / 0.8);
@@ -68,7 +68,8 @@ html {
   background-color: var(--color-bg-dark);
   color-scheme: dark;
   scrollbar-gutter: stable;
-  scrollbar-width: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-bg-light) var(--color-bg-dark);
   font-family: var(--font-f-text);
   color: var(--color-text);
 
@@ -78,6 +79,7 @@ html {
     border: 0;
     padding: 0;
     box-sizing: border-box;
+    outline-color: var(--color-text);
   }
 
   h1 {
@@ -125,7 +127,7 @@ html {
 
   ul,
   ol {
-    list-style: inside;
+    list-style-position: inside;
     line-height: var(--line-h-loose);
   }
 
@@ -170,22 +172,29 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 0;
+
+  --circle-color: oklch(24.896% 0.05062 294.356);
+  background-image:
+    radial-gradient(circle at 10% 20%, var(--circle-color), transparent 50%),
+    radial-gradient(circle at 90% 40%, var(--circle-color), transparent 45%),
+    radial-gradient(circle at 50% 80%, var(--circle-color), transparent 60%);
+  background-attachment: fixed;
+
+  --max-readable-width: 80ch;
+  --card-border-radius: 0 var(--spacing-2xs) var(--spacing-2xs) 0;
+  --card-border: 1px solid var(--color-bg-light);
+  --card-bg: linear-gradient(var(--color-bg-light), var(--color-bg) 50%);
+  --card-bg-transparent: linear-gradient(
+    oklch(from var(--color-bg-light) l c h / 0.9),
+    oklch(from var(--color-bg) l c h / 0.9) 50%
+  );
 }
 
 main {
   max-width: 1200px;
   margin-inline: auto;
+  margin-bottom: auto;
   padding-inline: var(--spacing-2xs);
-
-  a {
-    color: oklch(from var(--color-accent) calc(l + 0.2) c h);
-  }
-
-  --max-readable-width: 75ch;
-
-  --card-border-radius: 0 var(--spacing-2xs) var(--spacing-2xs) 0;
-  --card-border: 1px solid var(--color-bg-light);
-  --card-bg: linear-gradient(var(--color-bg-light), var(--color-bg) 50%);
 }
 
 button,

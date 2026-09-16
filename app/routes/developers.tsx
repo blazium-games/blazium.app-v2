@@ -12,15 +12,11 @@ function DevCard({ data }: { data: Developer }) {
         src={data.image ?? publicAsset("images/placeholder.svg")}
         alt={`${data.name}`}
       />
-      <div>
+      <hgroup>
         <h2>{data.name}</h2>
         {data.altName && <span>{data.altName}</span>}
-        <div>
-          {data.roles.map(role => (
-            <span key={role}>{role}</span>
-          ))}
-        </div>
-      </div>
+      </hgroup>
+      <ol>{data.roles.map(role => <li key={role}><small>{role}</small></li>)}</ol>
     </article>
   )
 }
@@ -35,7 +31,7 @@ export default ({ }: Route.ComponentProps) => {
       <h1>Blazium Games</h1>
       <p>We are a group of passionate programmers and artists driven by our love of videogames.</p>
       <section>
-        {developers.map(dev => (
+        {developers.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0).map(dev => (
           <DevCard key={dev.name} data={dev} />
         ))}
       </section>

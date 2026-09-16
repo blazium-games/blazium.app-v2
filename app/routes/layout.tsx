@@ -11,7 +11,6 @@ const logoSrc = publicAsset("/images/Brand Kit/Logo/SVG/Blazium_Logo.svg");
 export const Header = () => {
   return (
     <header className={style["header"]}>
-      <Link to="#main-content" reloadDocument>Skip to main content</Link>
       <nav>
         <Link to="/">
           <img src={logoSrc} alt="Blazium Logo" height={24} width={24} />
@@ -81,7 +80,7 @@ export const Footer = () => {
         </div>
         <div>
           <h2>Follow Us</h2>
-          <Link to="/chat">Discord</Link>
+          <Link to="https://blazim.app/chat">Discord</Link>
           <Link to={links.github}>GitHub</Link>
           <Link to={links.indiedb}>IndieDB</Link>
           <Link to={links.twitter}>X/Twitter</Link>

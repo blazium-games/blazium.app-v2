@@ -2,7 +2,6 @@ import type { Developer } from "~/types";
 
 export const developers: Developer[] = [{
   name: "Connor Elison",
-  image: "https://pbs.twimg.com/profile_images/1608275226768572416/f3otNXw5_400x400.jpg",
   roles: ["Business Management"],
 }, {
   name: "Randolph William Aarseth II",
@@ -39,7 +38,18 @@ export const developers: Developer[] = [{
   name: "Adaro",
   roles: ["3D Artist"],
 }, {
-  name: "Nock",
+  name: "Sunny Hope",
+  roles: [],
+}, {
+  name: "XFX",
+  roles: ["Front-End"],
+}, {
+  name: "Jurassic Jordan",
+  image: "https://github.com/jurassicjordan.png?size=128",
+  roles: ["3D Artist"],
+}, {
+  name: "Nicholas Condatore",
+  altName: "Nock",
   image: "https://github.com/ncondatore.png?size=128",
   roles: ["Product Management"],
 }, {

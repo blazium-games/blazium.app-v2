@@ -91,7 +91,7 @@
   }
 
   img {
-    vertical-align: top;
+    vertical-align: bottom;
     display: inline-block;
     margin-right: var(--spacing-2xs);
     width: 1.3em;

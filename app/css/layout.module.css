@@ -4,31 +4,19 @@
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
-  margin-bottom: var(--spacing-2xl);
-  padding: var(--spacing-2xs);
+  margin-bottom: var(--spacing-4xl);
   color: var(--color-text-muted);
   border-bottom: 1px solid oklch(from var(--color-bg-light) l c h / 0.5);
   position: sticky;
-  top: 0;
-  background-color: var(--color-bg-dark);
+  top: var(--spacing-m);
   z-index: 100;
 
-  a[href*="#"] {
-    position: fixed;
-    padding: var(--spacing-2xs);
-    top: var(--spacing-xs);
-    left: var(--spacing-xs);
-    background-color: var(--color-bg-light);
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    color: var(--color-text);
+  border: var(--card-border);
+  border-radius: var(--spacing-2xs);
+  padding: var(--spacing-xs);
 
-    &:focus {
-      pointer-events: initial;
-      opacity: 1;
-    }
-  }
+  background-image: var(--card-bg-transparent);
+  backdrop-filter: blur(2px);
 
   nav {
     display: flex;
@@ -53,7 +41,7 @@
   }
 
   a[class] {
-    --padding: var(--spacing-xs);
+    --padding: var(--spacing-s);
     padding: var(--padding);
     position: relative;
 
@@ -88,6 +76,7 @@
   }
 
   @media (width<640px) {
+
     >nav>div,
     >nav:last-of-type {
       display: none;
@@ -119,7 +108,8 @@
         color: var(--color-text-muted);
       }
 
-      a, span {
+      a,
+      span {
         padding: var(--spacing-xs);
       }
     }
@@ -127,9 +117,15 @@
 }
 
 .footer {
-  margin-top: auto;
+  margin-top: var(--spacing-5xl);
   color: var(--color-text-muted);
-  padding-top: var(--spacing-4xl);
+
+  border: var(--card-border);
+  border-radius: var(--spacing-2xs);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: var(--spacing-xs);
+  background-image: var(--card-bg);
 
   h2 {
     font: var(--h6);
@@ -142,7 +138,6 @@
 
   nav {
     padding: var(--spacing-xs);
-    border-top: 1px solid var(--color-bg);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -163,13 +158,14 @@
   }
 
   small {
-    opacity: 0.5;
+    opacity: 0.3;
     width: fit-content;
-    padding-inline: var(--spacing-3xs);
   }
 }
 
-:is(.header, .footer) a[href^="https\://"]:is(:hover, :focus-visible)::after {
+:is(.header, .footer) a[href^="https\://"]::after {
   content: "->";
-  position: absolute;
+  display: inline-block;
+  rotate: -45deg;
+  opacity: 0.5;
 }

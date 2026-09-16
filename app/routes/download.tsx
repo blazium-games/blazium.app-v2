@@ -11,6 +11,10 @@ export default ({ }: Route.ComponentProps) => {
     />
     <main className={style["main"]}>
       <h1>Blazium Hub</h1>
+      <p>
+        Blazium Hub is a free, open-source desktop app that helps you manage
+        your projects and engine versions.
+      </p>
       <Link
         to="https://cdn.blazium.app/hub/linux/0.1.16/blazium-hub_0.1.16_amd64.deb"
         download
@@ -19,8 +23,10 @@ export default ({ }: Route.ComponentProps) => {
         Download Blazium Hub
       </Link>
       <hr />
-      <Link to="/download/editor"><small>Standalone Download</small></Link>
-      <Link to="/download/cli"><small>Standalone CLI</small></Link>
+      <ul>
+        <li><Link to="/download/editor"><small>Standalone Editor Binary</small></Link></li>
+        <li><Link to="/download/cli"><small>Blazium CLI</small></Link></li>
+      </ul>
     </main>
   </>
 }
